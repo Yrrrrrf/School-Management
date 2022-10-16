@@ -1,4 +1,4 @@
-package database;
+
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -8,9 +8,9 @@ import java.sql.SQLException;
 // import org.springframework.boot.context.properties.ConfigurationProperties;
 
 // @ConfigurationProperties(prefix = "mysql-db-connection")
-public class CRUD {
+public class CRUD_dimplomados {
     // Also import the corresponding driver to tge packages to the project
-    static String URL = "jdbc:oracle:thin:@//187.188.66.250:1521/orcl";  // Server "diplomados"
+    static String URL = "jdbc:oracle:thin:@//187.188.66.253:1521/orcl";  //* Coonection to "diplomados" db
     static String USER = "ruic";
     static String PASSWORD = "oracle1";
 
@@ -106,5 +106,5 @@ public class CRUD {
 //        Test_JDBC.checkConnection();
         readUser("SELECT * FROM Persona");
     }
-
+ 
 }
