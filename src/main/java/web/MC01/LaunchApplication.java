@@ -14,16 +14,11 @@ public class LaunchApplication {
 		SpringApplication.run(LaunchApplication.class, args);
 	}
 
-	// Yesnt
 
+	//* DEPENDENCIES
+	//* 1. Spring Boot DevTools
+	//* 2. Spring Web
+	//* 3. Spring Data JPA
+	//? Adding Dependencies	
 
-
-
-
-
-
-
-
-
-	
 }

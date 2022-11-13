@@ -3,24 +3,34 @@ package database.entity;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
-import lombok.Getter;
-import lombok.Setter;
+import model.UserStatus;
 
+import lombok.*;
 
 @Getter
 @Setter
+@AllArgsConstructor
 @Entity
 @Table(name = "Personas")
-public abstract class Student extends User{
-    
+public class Student extends User {
 
-    public Student(int id, String name, String lastName) {
-        super(id, name, lastName);
+
+    private Kardex kardex;
+
+
+    public Student() {
+        super();
+        this.setStatus(UserStatus.STUDENT); // Set as a Student
+        this.kardex = new Kardex(0);  // Build a new syllabus (void)
     }
 
-    public static void main(String[] args) {
-        
-    }
 
+    @Override
+    public String toString() {
+        return super.toString() + "\n"
+             + this.kardex.getName() + "\n"
+             // TODO: Be able to display the subjects schedule & the average grade
+             + this.kardex.toString();
+    }
 
 }
