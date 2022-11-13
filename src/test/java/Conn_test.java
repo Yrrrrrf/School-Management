@@ -16,7 +16,7 @@ public class Conn_test {
                 System.out.printf("ID: %-10sName: %s %s\n", resultSet.getString("Id"), resultSet.getString("Nombre"), resultSet.getString("Apellido_Paterno"));
             }
             System.out.println("Read query executed properly!");
-            return new User(Integer.valueOf(resultSet.getString("Id")), resultSet.getString("Nombre"), resultSet.getString("Apellido_Paterno"));
+            // return new User(Integer.valueOf(resultSet.getString("Id")), resultSet.getString("Nombre"), resultSet.getString("Apellido_Paterno"));
         } catch (Exception e) {}
         return null;
     }

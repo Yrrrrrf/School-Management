@@ -1,10 +1,7 @@
-
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 
 public class StudentConnection {
-    
 
 
     public static Connection getStudentConnection() {
@@ -16,7 +13,4 @@ public class StudentConnection {
         }
         return null;
     }
-
-
-
 }
