@@ -7,6 +7,10 @@ import model.UserStatus;
 
 import lombok.*;
 
+
+/**
+ * Teacher is a User type that can <b>teach</b> {@code Subject} in some {@code Group}.
+ */ 
 @Getter
 @Setter
 @AllArgsConstructor
@@ -14,7 +18,7 @@ import lombok.*;
 @Table(name = "Personas")
 public class Teacher extends User {
 
-    
+
     private String title;
 
 

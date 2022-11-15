@@ -1,24 +1,22 @@
 package database.entity;
 
 import java.sql.Date;
-import java.util.Calendar;
+// import java.util.Calendar;
 
 import javax.persistence.*;  // @Table, @Entity, @Id, @GeneratedValue
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
 
 import lombok.*;
 import model.UserStatus;
 
-
+/**
+ * Is the base class for all the users of the system. It can't be instantiated because it's an abstract class.
+ */
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
 @Table(name = "Personas")
-// Being an abstract class, it can't be instantiated
 public abstract class User {
 
     @Id  // Primary key
@@ -43,7 +41,6 @@ public abstract class User {
     private UserStatus status = UserStatus.NULL;  // Not cursed yet
 
 
-
     // public User() {  // Default constructor
     //     this.id = 0;
     //     this.name = "";
@@ -53,10 +50,9 @@ public abstract class User {
     //     this.finishDate = null;
     // }
 
-    
-
     @Override
-    public String toString() {
+    public String toString()
+    {
         return "id: " + this.getId()
              + "\nname: " + this.getName() + " " + this.getFatherLastName() + " " + this.getMotherLastName() + "\n"
              + "birthday: " + this.getBirthday();
@@ -67,5 +63,6 @@ public abstract class User {
     public String getSurname() {
         return this.getFatherLastName() + " " + this.getMotherLastName();
     }
+
 
 }

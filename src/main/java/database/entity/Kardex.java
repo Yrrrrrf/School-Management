@@ -1,24 +1,22 @@
 package database.entity;
 
 
-import java.sql.Date;
 import java.util.ArrayList;
+import java.util.Map;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 import lombok.*;
 
+
+/**
+ * Kardex entity contains the information of a {@code Student}'s academic record.
+ */
 @Getter
 @Setter
 @AllArgsConstructor
 @Entity
-@Table(name = "HistorialAcademico")
-// This class is a list of all the subjects that a Student has taken
+@Table(name = "Kardex")
 public class Kardex {
 
     @Id
@@ -31,10 +29,8 @@ public class Kardex {
     @Column(name = "nombre", nullable = false, length = 15)
     private String name;
 
-    @Column(name = "fechaDeAutorizacion", nullable = false)
-    private Date approvalDate;
-
-    private ArrayList<Subject> subjects;
+    // Map<Subject, grade> subjects;
+    private ArrayList<Map<Subject, Integer>> subjects;
 
 
     public Kardex(int studentId) {
