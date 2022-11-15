@@ -11,6 +11,10 @@ import javax.persistence.Table;
 import lombok.*;
 
 
+/**
+ * ClassHour entity is an attribute of a {@code Group} object.
+ * This class contains the information of a class hour, such as the {@code Teacher} and {@code Students} list.
+ */
 @Getter
 @Setter
 @NoArgsConstructor

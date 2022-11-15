@@ -7,6 +7,15 @@ import model.UserStatus;
 
 import lombok.*;
 
+
+/**
+ * Student is a student .____.
+ * <p>
+ * A student can <b>take</b> {@code Subject} in some {@code Group} at a certain {@code ClassHour}.
+ * <p>
+ * Every Student have it's own {@code Kardex} that contains all the {@code Subject} that the student has taken or will take.
+ * The contains of the {@code Kardex} is assigned depending on the {@code Syllabus} of the Career that the student is in.
+ */
 @Getter
 @Setter
 @AllArgsConstructor

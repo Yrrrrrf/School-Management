@@ -5,15 +5,16 @@ import java.sql.Date;
 import java.util.ArrayList;
 import java.util.Map;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 import lombok.*;
 
+
+/**
+ * Syllabus entity contains the information of a Career's syllabus(curriculum).
+ * <p>
+ * Contains a Map that assign a {@code Subject} the reccomended {@code Semester} to take it.
+ */
 @Getter
 @Setter
 @AllArgsConstructor
@@ -35,8 +36,7 @@ public class Syllabus {
     @Column(name = "fechaDeAutorizacion", nullable = false)
     private Date approvalDate;
 
-    // TODO: Get the subjects from the database
-    // Assign an integer (reccomended semester) to each subject
+    // Map<Subject, recommendedSemester> subjects;
     private ArrayList<Map<Subject, Integer>> subjects;
 
 
@@ -44,7 +44,6 @@ public class Syllabus {
         this.id = studentId;
         getSubjects(this.getId());
     }
-
 
 
     /***
