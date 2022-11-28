@@ -1,12 +1,13 @@
 package MC01.db.entity;
 
-import java.util.List;
+
+// import java.util.List;
 
 import javax.persistence.*;
 
 import lombok.*;
-import MC01.model.AcademicArea;
-import MC01.model.SubjectStatus;
+// import MC01.model.AcademicArea;
+// import MC01.model.SubjectStatus;
 
 
 @Getter
@@ -17,6 +18,7 @@ import MC01.model.SubjectStatus;
 public class Subject {
 
     @Id
+    @Column(name = "idMateria")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String id;
 
@@ -26,24 +28,15 @@ public class Subject {
     @Column(name = "creditos", nullable = false)
     private int credits;
 
+    // @Enumerated(EnumType.STRING)
     @Column(name = "idDeAreaAcademica", nullable = false)
-    // TODO:  Check if it's possible to assign a value from the enum AcademicArea
-    private AcademicArea area; // INTEGER
-
-    // @Column(name = "idDeAreaAcademica", nullable = false)
-    private SubjectStatus status = SubjectStatus.NULL;  // Not cursed yet
-
-
-    // ? Relations <Subject - ClassHour>
-    @OneToMany(mappedBy = "subject_relation")
-    private List<ClassHour> classHours;
+    private int area;
+    // System.out.println(AcademicArea.fromString("MATH").ordinal());
 
 
     @Override
     public String toString() {
-        return this.getName() + "\n"
-             + this.getCredits() + "\n"
-             + this.getStatus();
+        return this.getName() + " " + this.getCredits() + "\n";
     }
 
 }

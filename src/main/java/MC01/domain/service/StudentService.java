@@ -32,7 +32,6 @@ public class StudentService {
     
     
     public boolean delete(int id) {
-        // TODO: Check if this works properly
         // if (getStudent(id).isPresent()) {
         // if (getStudent(id) != null) {
         //     studentRepository.delete(id);

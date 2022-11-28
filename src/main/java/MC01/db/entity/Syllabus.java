@@ -1,9 +1,8 @@
 package MC01.db.entity;
 
 
-import java.sql.Date;
+// import java.sql.Date;
 import java.util.ArrayList;
-import java.util.Map;
 
 import javax.persistence.*;
 
@@ -19,45 +18,31 @@ import lombok.*;
 @Setter
 @AllArgsConstructor
 @Entity
-@Table(name = "PlanDeEstudios")
+@Table(name = "PlanDeEstudio")
 // This class is a list of all the subjects that a Student has taken
 public class Syllabus {
 
 
     @Id
+    @Column(name = "idPlanDeEstudio")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(name = "idDeCarrera", nullable = false, length = 15)
-    private String syllabusId;
+    @Column(name = "idListaMaterias")
+    private SubjectsList subjectsList;
 
     @Column(name = "nombre", nullable = false, length = 15)
     private String name;
 
-    @Column(name = "fechaDeAutorizacion", nullable = false)
-    private Date approvalDate;
-
-    //? This ArrayList contains the Subjects assigned to a reccomended Semester
-    // Map<Subject, recommendedSemester> subjects;
-    private ArrayList<Map<Subject, Integer>> subjects;
+    // ! Add this only if I'm able to do it before the deadline (01-12-2022)
+    // @Column(name = "fechaDeAutorizacion", nullable = false)
+    // private Date approvalDate;
 
 
-    public Syllabus(int studentId) {
-        this.id = studentId;
-        getSubjects(this.getId());
-    }
-
-
-    /***
-     * This method is used to get the subjects that a student has taken
-     * @param studentId
-     */
-    private ArrayList<Subject> getSubjects(int studentId) {        
-        // TODO: Use the studentId to get the subjects from the database
-        // Can use lambdas, nested_smthing, etc
-        // this.subjects = new ArrayList<Subject>();
-        // this.subjects.add(new Subject("MATH", 4, SubjectStatus.PENDING_TO_CATALOG));
-        return null;
-    }
+    //? Relations <Syllabus - Subject>
+    // TODO: CHECK THIS
+    @OneToMany(mappedBy = "syllabus")
+    @JoinColumn(name = "id", insertable = false, updatable = false)
+    private ArrayList<Subject> subjectsList_relation;
 
 }

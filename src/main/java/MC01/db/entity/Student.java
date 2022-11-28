@@ -2,13 +2,13 @@ package MC01.db.entity;
 
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import MC01.model.User;
-import MC01.model.UserStatus;
-
+// import db.entity.StudentList;
 import lombok.*;
 
 
@@ -27,36 +27,29 @@ import lombok.*;
 @Table(name = "Alumno")
 public class Student extends User {
 
+    // The id of the student is being inherited from the User class
+
+    @Column(name = "correo", nullable = false, length = 63)
+    private String mail;
+
+    @Column(name = "idPlanDeEstudio", nullable = false)
+    private int syllabusId;
+
+    @Column(name = "contraseña", nullable = false, length = 63)
+    private String password;
+
 
     // ? Relations <Student - KardexS>
     @OneToMany(mappedBy = "student_relation")
     private List<Kardex> kardex;
 
 
-    // ! TODO: Look this
-    // ? Relations <Student - SubjectS>
-    @OneToMany(mappedBy = "student")
-    private List<StudentList> classHours;
-
-
-    public Student() {
-        super();
-        this.setStatus(UserStatus.STUDENT); // Set as a Student
-        // this.kardex = new Kardex(0);  // Build a new syllabus (void)
-    }
-
-
     @Override
     public String toString() {
         return super.toString() + "\n";
             //  + this.kardex.getName() + "\n"
-             // TODO: Be able to display the subjects schedule & the average grade
             //  + this.kardex.toString();
     }
 
-
     // ListObject.forEach(System.out::println);
-    // 
-
-
 }

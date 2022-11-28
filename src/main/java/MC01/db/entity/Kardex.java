@@ -1,11 +1,9 @@
 package MC01.db.entity;
 
 
-import java.util.ArrayList;
-import java.util.Map;
-
 import javax.persistence.*;
 
+import MC01.model.SubjectStatus;
 import lombok.*;
 
 
@@ -19,8 +17,8 @@ import lombok.*;
 @Table(name = "Kardex")
 public class Kardex {
 
-    
     @Id
+    @Column(name = "idKardex")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
@@ -42,8 +40,9 @@ public class Kardex {
     @Column(name = "calificacion", nullable = false)
     private float grade;
     
+    @Enumerated(EnumType.STRING)
     @Column(name = "estado", nullable = false)
-    private String status;
+    private SubjectStatus status;
 
 
     // ! Still thinking about this...
@@ -57,32 +56,5 @@ public class Kardex {
     @ManyToOne
     @JoinColumn(name = "idMateria", insertable = false, updatable = false)
     private Subject subject_relation;
-    
-
-
-
-    // TODO: CHECK THIS OUT LATER (I'm not sure if this is the right way to do it)    
-    //? This ArrayList contains the Subjects assigned to the obtained grade
-    // Map<Subject, grade> subjects;
-    private ArrayList<Map<Subject, Integer>> subjects;
-
-
-    public Kardex(int studentId) {
-        this.id = studentId;
-        getSubjects(this.getId());
-    }
-
-
-    /***
-     * This method is used to get the subjects that a student has taken
-     * @param studentId
-     */
-    private ArrayList<Subject> getSubjects(int studentId) {        
-        // TODO: Use the studentId to get the subjects from the database
-        // Can use lambdas, nested_smthing, etc
-        // this.subjects = new ArrayList<Subject>();
-        // this.subjects.add(new Subject("MATH", 4, SubjectStatus.PENDING_TO_CATALOG));
-        return null;
-    }
 
 }
