@@ -1,4 +1,4 @@
-package database.entity;
+package MC01.model;
 
 import java.sql.Date;
 // import java.util.Calendar;
@@ -6,7 +6,6 @@ import java.sql.Date;
 import javax.persistence.*;  // @Table, @Entity, @Id, @GeneratedValue
 
 import lombok.*;
-import model.UserStatus;
 
 /**
  * Is the base class for all the users of the system. It can't be instantiated because it's an abstract class.
@@ -15,7 +14,7 @@ import model.UserStatus;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity
+// User has not the @Entity annotation because it's an abstract class
 @Table(name = "Personas")
 public abstract class User {
 
@@ -34,11 +33,14 @@ public abstract class User {
 
     @Column(name = "fechaDeNacimiento", nullable = false)    
     private Date birthday;
-    
+
     @Column(name = "fechaDeFin", nullable = false)
     private Date finishDate;
 
-    private UserStatus status = UserStatus.NULL;  // Not cursed yet
+    @ElementCollection(targetClass = UserStatus.class  , fetch = FetchType.LAZY)
+    @CollectionTable(name = "Alumnos" , joinColumns = @JoinColumn(name = "status"))
+    @Enumerated(EnumType.STRING)
+    private UserStatus status;
 
 
     // public User() {  // Default constructor

@@ -1,14 +1,12 @@
-package database.entity;
+package MC01.db.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import java.util.List;
+
+import javax.persistence.*;
 
 import lombok.*;
-import model.SubjectStatus;
+import MC01.model.AcademicArea;
+import MC01.model.SubjectStatus;
 
 
 @Getter
@@ -28,9 +26,17 @@ public class Subject {
     @Column(name = "creditos", nullable = false)
     private int credits;
 
+    @Column(name = "idDeAreaAcademica", nullable = false)
+    // TODO:  Check if it's possible to assign a value from the enum AcademicArea
+    private AcademicArea area; // INTEGER
+
     // @Column(name = "idDeAreaAcademica", nullable = false)
     private SubjectStatus status = SubjectStatus.NULL;  // Not cursed yet
 
+
+    // ? Relations <Subject - ClassHour>
+    @OneToMany(mappedBy = "subject_relation")
+    private List<ClassHour> classHours;
 
 
     @Override

@@ -2,7 +2,7 @@
 import java.sql.Connection;
 import java.sql.ResultSet;
 
-import database.entity.User;
+import MC01.model.User;
 
 public class Conn_test {
     

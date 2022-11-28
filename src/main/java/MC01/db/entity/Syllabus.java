@@ -1,4 +1,4 @@
-package database.entity;
+package MC01.db.entity;
 
 
 import java.sql.Date;
@@ -23,6 +23,7 @@ import lombok.*;
 // This class is a list of all the subjects that a Student has taken
 public class Syllabus {
 
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -36,6 +37,7 @@ public class Syllabus {
     @Column(name = "fechaDeAutorizacion", nullable = false)
     private Date approvalDate;
 
+    //? This ArrayList contains the Subjects assigned to a reccomended Semester
     // Map<Subject, recommendedSemester> subjects;
     private ArrayList<Map<Subject, Integer>> subjects;
 

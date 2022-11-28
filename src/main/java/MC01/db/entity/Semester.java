@@ -1,11 +1,10 @@
-package model;
+package MC01.db.entity;
 
 import java.sql.Date;
-import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.*;
 
-import database.entity.Group;
 import lombok.*;
 
 
@@ -17,17 +16,21 @@ import lombok.*;
  */
 @Getter
 @Setter
-@NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "Semestre")
 public class Semester {
 
     @Id
-    @GeneratedValue(strategy = GenerationType   .IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     @Column(name = "nombre", nullable = false, length = 7)
     private String name;  // 20XX-1, 20XX-2, etc
+
+    // ? Using name as the Primary Key
+    // @Id
+    // @Column(name = "nombre", nullable = false, length = 7)
+    // private String name;  // 202X-JJ, 202X-JD, etc
 
     @Column(name = "fechaDeInicio", nullable = false)
     private Date startDate;
@@ -35,7 +38,10 @@ public class Semester {
     @Column(name = "fechaDeFin", nullable = false)
     private Date finishDate;
 
-    private ArrayList<Group> groups;    
+    // ? Relations <Semester - Group>
+    @OneToMany(mappedBy = "semester")
+    @JoinColumn(name = "id", insertable = false, updatable = false)
+    private List<Group> groups;
 
 
 

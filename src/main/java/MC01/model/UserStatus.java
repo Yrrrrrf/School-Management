@@ -1,4 +1,4 @@
-package model;
+package MC01.model;
 
 public enum UserStatus {
     // ? For new users

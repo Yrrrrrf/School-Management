@@ -4,13 +4,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController
+@RestController  // Indicate that this class is a Controller for a RestAPI
 @RequestMapping("/hello")
 public class HelloWorldController {
 
-    @GetMapping("/world")
+    @GetMapping("/")
     public String helloWorld() {
-        return "Hello World";
+        return "";
     }
 
 

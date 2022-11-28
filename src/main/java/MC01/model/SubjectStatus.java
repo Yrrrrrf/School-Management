@@ -1,4 +1,4 @@
-package model;
+package MC01.model;
 
 public enum SubjectStatus {
     // ? Still thinking what of these to select as default

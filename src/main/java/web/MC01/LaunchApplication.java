@@ -21,25 +21,18 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
  */
 
 @EnableAutoConfiguration(exclude={DataSourceAutoConfiguration.class})
-@SpringBootApplication
+@SpringBootApplication()
+// @SpringBootApplication(scanBasePackages = {"web.MC01", "database.crud", "database.entity", "service"})
 public class LaunchApplication {
-	
+
+
 	/**
-	 * Launches the application.
+	 * Launch the application.
 	 * @param args
 	 */
 	public static void main(String[] args) {
 		SpringApplication.run(LaunchApplication.class, args);
 	}
 
-
-	//* DEPENDENCIES
-	//* 1. Spring Boot DevTools
-	//* 2. Spring Web
-	//* 3. Spring Data JPA
-
-	//? Adding Dependencies	
-	//? lombok https://projectlombok.org/
-	//? 
 
 }

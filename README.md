@@ -1,7 +1,12 @@
 # Project MC01
 
 Advanced Databases Project.
-MC01 is a web  School Management Application that allows users to search for data from a database of a school using a web interface. The application is built using the [Spring](https://spring.io/) framework and the database is built using [OracleSQL](https://www.oracle.com/database/technologies/appdev/sql-developer.html). 
+MC01 is a web  School Management Application that allows users to search for data from a database of a school using a web interface. The application is built using the Stack JOLT ([Java](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html), [OracleSQL](https://www.oracle.com/database/technologies/appdev/sql-developer.html), [Linux](https://www.oracle.com/linux/), Tomcat).
+
+-  as programming language.
+- [Spring 2.7.5](https://spring.io/) as the web development framework.
+-  as the database.
+-  as the operating system that hosts the database.
 
 - **UML** Designed with [LucidChart](https://lucid.app/), you can see the diagram [here](https://lucid.app/lucidchart/e151864c-2d4a-4bcb-aab4-2fb80088c6a5/edit?viewport_loc=1305%2C392%2C963%2C1507%2CnzITqXaFRXv0&invitationId=inv_0e2e08d2-6bc3-427c-bc0e-e5b9ce386790).
 
@@ -18,6 +23,9 @@ MC01 is a web  School Management Application that allows users to search for dat
 - [Spring 2.7.5](https://spring.io/) as the web development framework.
 - [OracleSQL](https://www.oracle.com/database/technologies/appdev/sql-developer.html) as the database.
 - [OracleLinux 7.9](https://www.oracle.com/linux/) as the operating system that hosts the database.
+- [Apache Tomcat](https://tomcat.apache.org/) as the web server.
+
+
 
 ### Planning Tools:
 - [obsidian(1.0.3)](https://obsidian.md/) as a notebook.
