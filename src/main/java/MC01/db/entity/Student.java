@@ -47,7 +47,6 @@ public class Student extends User {
     @Override
     public String toString() {
         return super.toString() + "\n";
-            //  + this.kardex.getName() + "\n"
             //  + this.kardex.toString();
     }
 

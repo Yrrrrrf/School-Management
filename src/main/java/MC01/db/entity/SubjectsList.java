@@ -1,17 +1,15 @@
 package MC01.db.entity;
 
-import javax.persistence.Column;
-import javax.persistence.EmbeddedId;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 
-
-
+/**
+ * This is the class product of the relation between {@link Syllabus} and {@link Subject}.
+ */
 @Entity
 @Table(name = "ListaMateria")
 public class SubjectsList {
-    
+
     @EmbeddedId
     @Column(name = "idListaMaterias")
     private SubjectsListPK idSL;

@@ -3,30 +3,37 @@ package MC01.domain.service;
 import java.util.List;
 import java.util.Optional;
 
-// import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import MC01.db.entity.Student;
-import MC01.domain.repository.StudentRepository;
+import MC01.domain.dto.StudentDTO;
+import MC01.domain.dtoRepository.StudentDtoRepository;
 
 
 @Service
 public class StudentService {
     
 
-    // @Autowired
-    private StudentRepository studentRepository;
+    @Autowired
+    private StudentDtoRepository studentRepository;
 
 
-    public List<Student> getAll() {
+    public List<StudentDTO> getAll() {
         return studentRepository.getAll();
     }
 
-    public Optional<Student> getStudent(int id) {
-        return studentRepository.getStudent(id);
+
+    public Optional<List<StudentDTO>> getByName(String name) {
+        return studentRepository.getByName(name);
     }
 
-    public Student save(Student student) {
+
+    public Optional<StudentDTO> getStudent(int studentId) {
+        return studentRepository.getStudent(studentId);
+    }
+
+
+    public StudentDTO save(StudentDTO student) {
         return studentRepository.save(student);
     }
     
