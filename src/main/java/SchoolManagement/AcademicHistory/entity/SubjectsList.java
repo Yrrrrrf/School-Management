@@ -25,7 +25,6 @@ public class SubjectsList {
 
     @ManyToOne
     @JoinColumn(name = "idPlanDeEstudio", insertable = false, updatable = false)
-    // @JoinColumn(name = "idPlanDeEstudio", referencedColumnName = "idPlanDeEstudio", insertable = false, updatable = false)
     private Syllabus syllabus;
 
     @ManyToOne

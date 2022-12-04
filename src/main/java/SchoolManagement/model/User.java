@@ -1,8 +1,9 @@
 package SchoolManagement.model;
 
 
+import java.math.BigDecimal;
 import java.sql.Date;
-// import java.util.Calendar;
+
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -11,7 +12,6 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Inheritance;
 import jakarta.persistence.InheritanceType;
-import jakarta.persistence.Table;
 import lombok.*;
 
 
@@ -30,7 +30,7 @@ public abstract class User {
     @Id  // Primary key
     @Column(name = "idPersona")
     @GeneratedValue(strategy = GenerationType.IDENTITY)  // Autoincrement
-    private Integer id;
+    private BigDecimal id;
 
     @Column(name = "nombre", nullable = false, length = 63)
     private String name;

@@ -45,6 +45,10 @@ public class Subject {
     @OneToMany(mappedBy = "subject")
     private List<SubjectsList> subjectsList;
 
+    // ? Relation: A Subject can be in many Kardex
+    @OneToMany(mappedBy = "subject")
+    private List<SubjectGrade> subjectsGrade;
+
 
 
     @Override

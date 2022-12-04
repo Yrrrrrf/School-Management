@@ -43,7 +43,11 @@ public class Syllabus {
     // ? Relation: A Syllabus can have many Subjects
     @OneToMany(mappedBy = "syllabus")
     private List<SubjectsList> subjectsList;
-
+    
+    // ? Relation: A Syllabus can be taken by many Students
+    @OneToMany(mappedBy = "studentSyllabus")
+    private List<Student> studentsList;
+    
 
     @Override
     public String toString() {
