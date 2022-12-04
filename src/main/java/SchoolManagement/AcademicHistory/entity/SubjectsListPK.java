@@ -2,7 +2,7 @@ package SchoolManagement.AcademicHistory.entity;
 
 
 import java.io.Serializable;
-import java.math.BigDecimal;
+import java.math.BigInteger;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
@@ -18,9 +18,9 @@ import jakarta.persistence.Embeddable;
 public class SubjectsListPK implements Serializable {
 
     @Column(name = "idPlanDeEstudio", nullable = false)
-    private BigDecimal syllabusId;
+    private BigInteger syllabusId;
 
     @Column(name = "idMateria", nullable = false)
-    private BigDecimal subjectId;
+    private BigInteger subjectId;
 
 }

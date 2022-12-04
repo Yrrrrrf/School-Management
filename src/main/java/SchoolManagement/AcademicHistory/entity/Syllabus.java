@@ -1,7 +1,6 @@
 package SchoolManagement.AcademicHistory.entity;
 
-
-import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.util.List;
 
 import jakarta.persistence.Column;
@@ -31,7 +30,7 @@ public class Syllabus {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idMateria", nullable = false)
-    private BigDecimal id;
+    private BigInteger id;
 
     @Column(name = "nombre", nullable = false, length = 63)
     private String name;

@@ -23,6 +23,7 @@ public class SubjectsList {
     @Column(name = "semestreRecomendado", nullable = false)
     private int recommendedSemester;
 
+
     @ManyToOne
     @JoinColumn(name = "idPlanDeEstudio", insertable = false, updatable = false)
     private Syllabus syllabus;
@@ -30,4 +31,5 @@ public class SubjectsList {
     @ManyToOne
     @JoinColumn(name = "idMateria", insertable = false, updatable = false)
     private Subject subject;
+
 }

@@ -17,11 +17,11 @@ public interface StudentRepository extends CrudRepository<Student, Long> {
     
     public List<Student> findByName(String name);
 
-    public List<Student> findByNameOrderByNameAsc(int credits);
+    public List<Student> findByNameOrderByNameAsc(String name);
 
-    public List<Student> findByCredits(int credits);
+    public Student findByMail(String mail);
 
-    public List<Student> findByCreditsOrderByNameAsc(int credits);
+    public List<Student> findBySyllabusId(int syllabusId);    
 
-    
+
 }

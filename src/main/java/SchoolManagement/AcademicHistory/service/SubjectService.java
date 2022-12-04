@@ -4,7 +4,6 @@ package SchoolManagement.AcademicHistory.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import SchoolManagement.AcademicHistory.entity.Subject;
@@ -16,9 +15,7 @@ import SchoolManagement.AcademicHistory.servive_interface.SubjectServiceInterfac
  * This is the class that implements the business logic for the {@link Subject} class.
  */
 @Service
-@Component
 public class SubjectService implements SubjectServiceInterface {
-
 
     @Autowired
     private SubjectRepository subjectRepository;

@@ -1,27 +1,42 @@
 <!DOCTYPE html>
-<html>
-
-<head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>School Management</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-    <script src='main.js'></script>
-</head>
-
-<body>
-    <h3>Project: "MC01"</h3>
-    <h6 style="font-family:Lucida Console";>v0.01 (pre-alpha)</h6>
-
-        <form action="">
-            <label for="fname">First name:</label><br />
-            <input type="text" id="fname" name="fname" /><br />
+<html lang="en">
+  <head>
+    <!-- <meta charset="UTF-8" /> -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="SubjectForm">
+      <form action="subject/save" method="post">
+        <label for="name">Subject name:</label>
         
-            <label for="lname">Last name:</label><br />
-            <input type="text" id="lname" name="lname" />
-            <input type="submit" value="Submit" />
-        </form>    
+        <input
+          type="text"
+          name="name"
+          id="name"
+          placeholder="Subject name:"
+        />
 
-</body>
+
+        <label for="Creditos:">Credits:</label>
+        <input
+          type="number"
+          name="credits"
+          id="credits"
+          placeholder="credits"
+        />
+
+        <label for="Area Academica:">Academic Area:</label>
+        <input
+          type="text"
+          name="academicArea"
+          id="academicArea"
+          placeholder="Academic Area"
+        />
+
+        <button>Add</button>
+      </form>
+    </div>
+  </body>
 </html>

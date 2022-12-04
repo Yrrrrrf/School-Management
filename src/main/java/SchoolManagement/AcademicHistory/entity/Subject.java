@@ -1,7 +1,7 @@
 package SchoolManagement.AcademicHistory.entity;
 
 
-import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.util.List;
 
 import jakarta.persistence.Column;
@@ -13,6 +13,7 @@ import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 
@@ -22,6 +23,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table(name = "Materia")
 public class Subject {
@@ -29,7 +31,7 @@ public class Subject {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idMateria", nullable = false)
-    private BigDecimal id;
+    private BigInteger id;
 
     @Column(name = "nombre", nullable = false, length = 63)
     private String name;
@@ -41,13 +43,14 @@ public class Subject {
     private String academicArea;
 
 
-    // ? Relation: A Subject can be in many Syllabus
-    @OneToMany(mappedBy = "subject")
-    private List<SubjectsList> subjectsList;
+    // TODO: Check if this is really necessary
+    // // ? Relation: A Subject can be in many Syllabus
+    // @OneToMany(mappedBy = "subject")
+    // private List<SubjectsList> subjectsList;
 
-    // ? Relation: A Subject can be in many Kardex
-    @OneToMany(mappedBy = "subject")
-    private List<SubjectGrade> subjectsGrade;
+    // // ? Relation: A Subject can be in many Kardex
+    // @OneToMany(mappedBy = "subject")
+    // private List<SubjectGrade> subjectsGrade;
 
 
 
