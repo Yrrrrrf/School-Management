@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./CSS/reducido.css">
+
+
+    <link rel="stylesheet" href="./CSS/Styles.css">
+    <title>Mainmenu</title>
+  </head>
+  <body class="bg-primary">
+    <div class="d-md-none ">
+        <nav class="navbar navbar-expand-lg bg-info">
+            <div class="container-fluid">
+              <a class="navbar-brand  text-primary" href="#">Name, Last Name</a>
+               
+              <button class="navbar-toggler bg-primary" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse text-end " id="navbarNav">
+                <ul class="navbar-nav ">
+                  <li class="nav-item ">
+                    <a class="nav-link active text-primary mb-3 mt-3" aria-current="page" href="#"> <i class="fa-solid fa-bullhorn m-2"></i> Main Advices</a>
+                  </li>
+                  <li class="nav-item ">
+                    <a class="nav-link active text-primary mb-3 mt-3" aria-current="page" href="#"><i class="fa-solid fa-timeline m-2"></i>Academic History</a>
+                  </li>
+                  <li class="nav-item ">
+                    <a class="nav-link active text-primary mb-3 mt-3" aria-current="page" href="#"><i class="fa-solid fa-calendar m-2"></i>Schedule</a>
+                  </li>
+                  <li class="nav-item ">
+                    <a class="nav-link active text-primary mb-3 mt-3" aria-current="page" href="#"> <i class="fa-solid fa-info m-2"></i>My information</a>
+                  </li>
+                  <li class="nav-item ">
+                    <a class="nav-link active text-primary mb-3 mt-3" aria-current="page" href="#"><i class="fa-solid fa-info m-2"></i>Enrollment</a>
+                  </li>
+                 
+                  <button type="button" class="btn btn-warning">Log out</button>
+                </ul>
+              </div>
+            </div>
+          </nav>
+    </div>
+
+    
+    <div class="main-container d-flex">
+        
+        <div class="sidebar bg-info vh-100  	d-sm-none d-md-block 	d-none d-sm-block" id="sine_nav">
+           <div class="header-box px-3 pt-3 pb-4 text-center">
+                <img src="./images/IMG user.png" alt="" class="img-fluid mt-5">
+                <h1 class="fs-4 text-primary mt-3">Name Last Name</h1>
+                <h1 class="fs-4 text-primary m-1">Campus</h1>
+                <h1 class="fs-4 text-primary m-1">Study plan</h1>
+            </div>
+          
+           
+           <ul class="list-unstyled ">
+            <li class="mt-5" > <a href="#" class="text-decoration-none  fs-5"> <i class="fa-solid fa-bullhorn m-2"></i> Main Advices</a></li>
+            <li class="mt-5" > <a href="#" class="text-decoration-none  fs-5"> <i class="fa-solid fa-timeline m-2"></i> Academic Histoty</a></li>
+            <li class="mt-5" > <a href="#" class="text-decoration-none  fs-5"> <i class="fa-solid fa-calendar m-2"></i>Schedule</a></li>
+            <li class="mt-5" > <a href="#" class="text-decoration-none  fs-5"> <i class="fa-solid fa-user m-2"></i>My information</a></li>
+            <li class="mt-5" > <a href="#" class="text-decoration-none  fs-5"> <i class="fa-solid fa-info m-2"></i> Enrollment </a></li>
+
+           </ul>
+           
+           <div class="text-center mt-5"> 
+           <a href="#" >Log out</a>
+           </div>
+       
+        </div>
+      
+        
+        
+
+        
+            <div class="h5 m-5" id="current_date"></p></div>
+    
+  
+        <script src="https://kit.fontawesome.com/e84b545da8.js" crossorigin="anonymous"></script>       
+        <script src="./JS/Hour.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+  </body>
+</html>

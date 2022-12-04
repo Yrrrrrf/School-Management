@@ -40,7 +40,7 @@ public class Syllabus {
     private String approvalDate;
 
 
-    // ? Relation between Syllabus and SubjectsList
+    // ? Relation: A Syllabus can have many Subjects
     @OneToMany(mappedBy = "syllabus")
     private List<SubjectsList> subjectsList;
 

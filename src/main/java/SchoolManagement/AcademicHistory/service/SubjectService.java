@@ -8,10 +8,8 @@ import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import SchoolManagement.AcademicHistory.entity.Subject;
-import SchoolManagement.AcademicHistory.entity.Syllabus;
 import SchoolManagement.AcademicHistory.repository.SubjectRepository;
 import SchoolManagement.AcademicHistory.servive_interface.SubjectServiceInterface;
-import SchoolManagement.AcademicHistory.servive_interface.SyllabusServiceInterface;
 
 
 /**

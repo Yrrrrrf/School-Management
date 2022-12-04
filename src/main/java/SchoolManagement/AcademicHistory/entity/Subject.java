@@ -40,8 +40,11 @@ public class Subject {
     @Column(name = "areaAcademica", nullable = false, length = 63)
     private String academicArea;
 
+
+    // ? Relation: A Subject can be in many Syllabus
     @OneToMany(mappedBy = "subject")
     private List<SubjectsList> subjectsList;
+
 
 
     @Override
