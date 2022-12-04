@@ -1,4 +1,4 @@
-package SchoolManagement.AcademicHistory.servive_interface;
+package SchoolManagement.AcademicHistory.service_interface;
 
 
 import java.util.List;

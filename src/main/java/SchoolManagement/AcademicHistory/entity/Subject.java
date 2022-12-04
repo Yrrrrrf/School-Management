@@ -27,7 +27,7 @@ import lombok.Setter;
 @Entity
 @Table(name = "Materia")
 public class Subject {
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idMateria", nullable = false)
@@ -44,20 +44,20 @@ public class Subject {
 
 
     // TODO: Check if this is really necessary
-    // // ? Relation: A Subject can be in many Syllabus
-    // @OneToMany(mappedBy = "subject")
-    // private List<SubjectsList> subjectsList;
+    // ? Relation: A Subject can be in many Syllabus
+    @OneToMany(mappedBy = "subject")
+    private List<SubjectsList> subjectsList;
 
-    // // ? Relation: A Subject can be in many Kardex
-    // @OneToMany(mappedBy = "subject")
-    // private List<SubjectGrade> subjectsGrade;
+    // ? Relation: A Subject can be in many Kardex
+    @OneToMany(mappedBy = "subject")
+    private List<SubjectGrade> subjectsGrade;
 
 
 
-    @Override
-    public String toString() {
-        return String.format("Subject [id= %4s    name= &32s, credits= $4s]");
-    }
+    // @Override
+    // public String toString() {
+    //     return String.format("Subject [id= %4s    name= &32s, credits= $4s]");
+    // }
 
 
 }

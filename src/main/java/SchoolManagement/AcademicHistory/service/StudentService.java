@@ -7,9 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import SchoolManagement.AcademicHistory.entity.Student;
-import SchoolManagement.AcademicHistory.entity.Subject;
 import SchoolManagement.AcademicHistory.repository.StudentRepository;
-import SchoolManagement.AcademicHistory.servive_interface.StudentServiceInterface;
+import SchoolManagement.AcademicHistory.service_interface.StudentServiceInterface;
 
 
 /**

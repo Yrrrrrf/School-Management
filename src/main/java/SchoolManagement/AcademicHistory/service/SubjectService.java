@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 import SchoolManagement.AcademicHistory.entity.Subject;
 import SchoolManagement.AcademicHistory.repository.SubjectRepository;
-import SchoolManagement.AcademicHistory.servive_interface.SubjectServiceInterface;
+import SchoolManagement.AcademicHistory.service_interface.SubjectServiceInterface;
 
 
 /**
@@ -47,6 +47,10 @@ public class SubjectService implements SubjectServiceInterface {
 
 
     public void deleteById(Long subjectId){
+        // return getById(subjectId).map(subject -> {
+        //     subjectRepository.delete(subject);
+        //     return true;
+        // }).orElse(false);
         subjectRepository.deleteById(subjectId);
     }
 

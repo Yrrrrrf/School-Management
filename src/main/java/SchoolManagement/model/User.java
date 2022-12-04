@@ -41,7 +41,7 @@ public abstract class User {
     @Column(name = "apellidoMaterno", nullable = false, length = 63)
     private String motherLastName;
 
-    @Column(name = "fechaDeNacimiento", nullable = false)    
+    @Column(name = "fechaDeNacimiento")//, nullable = false)    
     private Date birthday;
 
 
@@ -49,8 +49,8 @@ public abstract class User {
     public String toString()
     {
         return "id: " + this.getId()
-             + "\nname: " + this.getName() + " " + this.getFatherLastName() + " " + this.getMotherLastName() + "\n"
-             + "birthday: " + this.getBirthday();
+             + "\nname: " + this.getName() + " " + this.getFatherLastName() + " " + this.getMotherLastName() + "\n";
+            //  + "birthday: " + this.getBirthday();
             //  + "age: " + (Calendar.getInstance().get(Calendar.YEAR) - this.birthday.getYe);
     }
 

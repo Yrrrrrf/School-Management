@@ -1,4 +1,4 @@
-package SchoolManagement.AcademicHistory.servive_interface;
+package SchoolManagement.AcademicHistory.service_interface;
 
 
 import java.util.List;
@@ -19,8 +19,6 @@ public interface SyllabusServiceInterface {
 
     public Syllabus getByName(String name);
 
-    public void save(Syllabus syllabus);
-
-    public void delete(Syllabus syllabus);
+    public Syllabus save(Syllabus syllabus);
 
 }

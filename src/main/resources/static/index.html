@@ -7,36 +7,105 @@
     <title>Document</title>
   </head>
   <body>
+
     <div class="SubjectForm">
-      <form action="subject/save" method="post">
-        <label for="name">Subject name:</label>
-        
-        <input
-          type="text"
-          name="name"
-          id="name"
-          placeholder="Subject name:"
-        />
+        <form action="subject/save" method="post">
+            <label for="name">Subject name:</label>
+            <input
+                type="text"
+                name="name"
+                id="name"
+                placeholder="subject name"
+            />
+            <label for="Creditos:">Credits:</label>
+            <input
+                type="number"
+                name="credits"
+                id="credits"
+                placeholder="credits"
+            />
+            <label for="Area Academica:">Academic Area:</label>
+            <input
+                type="text"
+                name="academicArea"
+                id="academicArea"
+                placeholder="academic area"
+            />
+        <button>Add</button>
+      </form>
+    </div>
 
-
-        <label for="Creditos:">Credits:</label>
-        <input
-          type="number"
-          name="credits"
-          id="credits"
-          placeholder="credits"
-        />
-
-        <label for="Area Academica:">Academic Area:</label>
-        <input
-          type="text"
-          name="academicArea"
-          id="academicArea"
-          placeholder="Academic Area"
-        />
+    <div class="StudentForm">
+        <form action="student/save" method="post">
+            <label for="name">Student name:</label>
+            <input
+                type="text"
+                name="name"
+                id="name"
+                placeholder=""
+            />
+            <label for="fatherLastName">father LastName:</label>
+            <input
+                type="text"
+                name="fatherLastName"
+                id="fatherLastName"
+                placeholder=""
+            />
+            <label for="motherLastName">mother LastName:</label>
+            <input
+                type="text"
+                name="motherLastName"
+                id="motherLastName"
+                placeholder=""
+            />
+            <label for="mail">mail:</label>
+            <input
+                type="text"
+                name="mail"
+                id="mail"
+                placeholder=""
+            />
+            <label for="password">password:</label>
+            <input
+                type="text"
+                name="password"
+                id="password"
+                placeholder=""
+            />
+            <label for="syllabus:">PlanDeEstudio:</label>
+            <input
+                type="number"
+                name="syllabusId"
+                id="syllabusId"
+                placeholder="syllabus"
+            />
 
         <button>Add</button>
       </form>
     </div>
+
+
+    <div class="SyllabusForm">
+        <form action="syllabus/save" method="post">
+            <label for="name">PlanDeEstudioNombre:</label>
+            <input
+                type="text"
+                name="name"
+                id="name"
+                placeholder=""
+            />
+            <label for="approvalDate:">FechaAprobacion:</label>
+            <input
+                type="date"
+                name="approvalDate"
+                id="approvalDate"
+                placeholder="yyyy-mm-dd"
+            />
+
+        <button>Add</button>
+      </form>
+    </div>
+
+    
   </body>
 </html>

@@ -31,8 +31,8 @@ public class SubjectController {
 
 
     @GetMapping("/{subjectId}")
-    public Subject getById(@PathVariable("subjectId") Long studentId) {
-        return subjectService.getById(studentId);
+    public Subject getById(@PathVariable("subjectId") Long subjectId) {
+        return subjectService.getById(subjectId);
     }
 
 
@@ -52,10 +52,11 @@ public class SubjectController {
     public Subject save(@Validated Subject subject) {
         return subjectService.save(subject);
     }
-
-
-    @DeleteMapping("/delete/{subjectId}")
-    public void deleteById(@PathVariable("subjectId") Long subjectId) {
+    
+    
+    // TODO: Fix this
+    @DeleteMapping("/delete/{id}")
+    public void deleteById(@PathVariable("id") Long subjectId) {
         subjectService.deleteById(subjectId);
     }
 

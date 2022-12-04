@@ -23,6 +23,7 @@ import lombok.*;
 @Getter
 @Setter
 @AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @PrimaryKeyJoinColumn(name = "idAlumno")
 @Table(name = "Alumno")
@@ -53,7 +54,6 @@ public class Student extends User {
     @Override
     public String toString() {
         return super.toString() + "\n";
-            //  + this.kardex.toString();
     }
 
     // ListObject.forEach(System.out::println);

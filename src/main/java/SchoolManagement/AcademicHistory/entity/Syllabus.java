@@ -1,6 +1,7 @@
 package SchoolManagement.AcademicHistory.entity;
 
 import java.math.BigInteger;
+import java.sql.Date;
 import java.util.List;
 
 import jakarta.persistence.Column;
@@ -12,6 +13,7 @@ import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 
@@ -23,8 +25,9 @@ import lombok.Setter;
 @Getter
 @Setter
 @AllArgsConstructor
+@NoArgsConstructor
 @Entity
-@Table(name = "PlanDeEstidio")
+@Table(name = "PlanDeEstudio")
 public class Syllabus {
         
     @Id
@@ -34,9 +37,9 @@ public class Syllabus {
 
     @Column(name = "nombre", nullable = false, length = 63)
     private String name;
-
-    @Column(name = "fechaDeAprobacion", nullable = false, length = 63)
-    private String approvalDate;
+    
+    @Column(name = "fechaDeAprobacion", nullable = false)//, length = 63)
+    private Date approvalDate;
 
 
     // ? Relation: A Syllabus can have many Subjects
