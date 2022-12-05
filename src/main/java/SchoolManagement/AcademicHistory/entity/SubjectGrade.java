@@ -17,6 +17,7 @@ import lombok.*;
 @Getter
 @Setter
 @AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table(name = "CalificacionMateria")
 public class SubjectGrade {

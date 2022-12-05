@@ -5,6 +5,10 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import jakarta.persistence.Column;
 import jakarta.persistence.EmbeddedId;
 
@@ -12,6 +16,10 @@ import jakarta.persistence.EmbeddedId;
 /**
  * This is the class product of the relation between {@link Syllabus} and {@link Subject}.
  */
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table(name = "ListaMateria")
 public class SubjectsList {

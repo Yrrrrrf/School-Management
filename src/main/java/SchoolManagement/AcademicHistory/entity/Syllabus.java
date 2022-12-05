@@ -32,11 +32,14 @@ public class Syllabus {
         
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "idMateria", nullable = false)
+    @Column(name = "idPlanDeEstudio", nullable = false)
     private BigInteger id;
 
     @Column(name = "nombre", nullable = false, length = 63)
     private String name;
+
+    @Column(name = "clave", nullable = false, length = 15)
+    private String key;
     
     @Column(name = "fechaDeAprobacion", nullable = false)//, length = 63)
     private Date approvalDate;
@@ -45,7 +48,7 @@ public class Syllabus {
     // ? Relation: A Syllabus can have many Subjects
     @OneToMany(mappedBy = "syllabus")
     private List<SubjectsList> subjectsList;
-    
+
     // ? Relation: A Syllabus can be taken by many Students
     @OneToMany(mappedBy = "studentSyllabus")
     private List<Student> studentsList;

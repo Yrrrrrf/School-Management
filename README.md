@@ -8,7 +8,7 @@ MC01 is a web  School Management Application that allows users to search for dat
 ----
 ### Setup
 - The application will run on `localhost:7000` (temporarely). I must look for a web hosting service to deploy the application.
-- Run `School Management/src/main/java/web/LaunchApplication.java` to start the application. 
+- Use `LaunchApplication.java` to run the application.
 
 
 ----

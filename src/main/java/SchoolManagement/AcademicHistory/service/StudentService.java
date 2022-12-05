@@ -52,4 +52,7 @@ public class StudentService implements StudentServiceInterface {
     }
 
 
+    public void deleteAll(){
+        studentRepository.deleteAll();
+    }
 }
