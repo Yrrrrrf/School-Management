@@ -4,13 +4,13 @@ package SchoolManagement.AcademicHistory.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import SchoolManagement.AcademicHistory.entity.Syllabus;
@@ -49,11 +49,10 @@ public class SyllabusController {
     }
 
 
-    // TODO: Fix this
     @DeleteMapping("/delete/{syllabusId}")
-    // @RequestMapping(path = "/delete/{syllabusId}", method = RequestMethod.DELETE)
-    public void deleteById(@PathVariable("syllabusId") Long syllabusId) {
+    public ResponseEntity deleteById(@PathVariable("syllabusId") Long syllabusId) {
         syllabusService.deleteById(syllabusId);
+        return ResponseEntity.ok(syllabusId + " deleted");
     }
 
 

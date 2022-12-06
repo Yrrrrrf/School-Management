@@ -1,0 +1,55 @@
+  <link rel="stylesheet" href="../static/css/subject-styles.css">
+  <body>
+  <div class="container">
+
+    <form action="/subject/save" method="post">
+    <!-- <form action="/subject/save"> -->
+      <div class="row">
+        <div class="col-25">
+          <label for="fname">Subject Name</label>
+        </div>
+        <div class="col-75">
+          <input type="text" id="name" name="name" placeholder="Subject name...">
+        </div>
+      </div>
+
+      <div class="row">
+          <div class="col-25">
+            <label for="lname">Credits</label>
+          </div>
+          <div class="col-75">
+            <input type="number" id="credits" name="credits" min="5" max="9" step="1">
+          </div>
+      </div>  
+
+      <div class="row">
+        <div class="col-25">
+          <label for="academicArea">Area Academica</label>
+        </div>
+        <div class="col-75">
+          <select id="academicArea" name="academicArea">
+            <option value="0">propedeuticas</option>
+            <option value="math">matemáticas</option>
+            <option value="computer science">ciencias de computacion</option>
+            <option value="mecanics">mecanica</option>
+          </select>
+        </div>
+      </div>
+
+      <br>
+
+      <div class="row">
+        <input type="submit" value="Submit">
+      </div>
+
+    </form>
+  </div>
+  
+  <br>
+
+  <div style ="border-radius: 5px; background-color: #f2f2f2; padding: 20px; text-align:center;">
+    <p>Need to add a new academic area?<a href="https://github.com/Yrrrrrf/School-Management" target = "_parent">Add Academic Area</a>.</p>
+  </div>
+
+  </body>
+  </html>

@@ -21,4 +21,6 @@ public interface SyllabusServiceInterface {
 
     public Syllabus save(Syllabus syllabus);
 
+    // public void update(Long syllabusId, Syllabus syllabus);
+
 }

@@ -46,5 +46,4 @@ public class SyllabusService implements SyllabusServiceInterface {
         syllabusRepository.deleteById(subjectId);
     }
 
-
 }

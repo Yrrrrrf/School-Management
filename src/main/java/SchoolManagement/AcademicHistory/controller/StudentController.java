@@ -65,12 +65,12 @@ public class StudentController {
     public String studentData() {
         return "You're now in the Student Controller";
     }
+
     
-    
-    @DeleteMapping("/delete_all")
-    public void deleteAll() {
-        studentService.deleteAll();
-    }
+    // @DeleteMapping("/delete_all")
+    // public void deleteAll() {
+    //     studentService.deleteAll();
+    // }
 
 
 }
