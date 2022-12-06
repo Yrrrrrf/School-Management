@@ -112,6 +112,9 @@
                 <li class="nav-item">
                     <a class="nav-link" id="student-form-tab" data-toggle="tab" href="#student-form" role="tab" aria-controls="form" aria-selected="true">Student Form</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="syllabus-form-tab" data-toggle="tab" href="#syllabus-form" role="tab" aria-controls="form" aria-selected="true">Syllabus Form</a>
+                </li>
             </ul>
 
             <div class="tab-content" id="myTabContent">
@@ -303,8 +306,50 @@
                         </div>
                     </div>
                 </div>
-        
-                
+
+                <div class="tab-pane fade" id="syllabus-form" role="tabpanel" aria-labelledby="form-tab">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4>Formulario Plan De Estudios</h4>
+                        </div>
+                        <div class="card-body">
+                            <form class="studentForm" role="form" autocomplete="off" action="student/save" method="post">
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label form-control-label">Nombre</label>
+                                    <div class="col-lg-9">
+                                        <input class="form-control" type="text" placeholder="nombre de la materia...">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label form-control-label">Apellido Paterno</label>
+                                    <div class="col-lg-9">
+                                        <input class="form-control" type="text" placeholder="apellido paterno...">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label form-control-label">Apellido Materno</label>
+                                    <div class="col-lg-9">
+                                        <input class="form-control" type="text" placeholder="apellido materno...">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label form-control-label">Plan De Estidio</label>
+                                    <select>
+                                        <option selected>Open this select menu</option>
+                                        <option value="3">Ingenieria en Computacion</option>
+                                    </select>
+                                </div>
+                                <p>
+                                <div class="form-group row">
+                                    <div class="col-lg-12 text-center">
+                                        <input type="reset" class="btn btn-secondary" value="Cancel">
+                                        <input type="button" class="btn btn-primary" value="Save">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
         
         </div>
     </div>

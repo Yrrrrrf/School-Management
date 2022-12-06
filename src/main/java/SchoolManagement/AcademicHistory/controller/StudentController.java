@@ -67,6 +67,11 @@ public class StudentController {
     }
 
     
+    @GetMapping("/form")
+    public String studentForm() {
+        return "admin-view";
+    }
+
     // @DeleteMapping("/delete_all")
     // public void deleteAll() {
     //     studentService.deleteAll();
