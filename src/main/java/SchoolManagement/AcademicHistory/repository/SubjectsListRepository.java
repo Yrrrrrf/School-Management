@@ -3,6 +3,7 @@ package SchoolManagement.AcademicHistory.repository;
 
 import java.util.List;
 
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
@@ -21,6 +22,7 @@ public interface SubjectsListRepository extends CrudRepository<SubjectsList, Lon
 
     public List<SubjectsList> findByRecommendedSemester(int recommendedSemester);
 
-    // public List<SubjectsList> findBySubjectsListKeySyllabusIdAndSubjectsListKeySubjectId(int syllabusId, int subjectId);
+    @Query("from SubjectsList")
+    List<SubjectsList> select();
 
 }

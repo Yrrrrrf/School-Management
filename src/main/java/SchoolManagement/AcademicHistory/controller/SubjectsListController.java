@@ -66,5 +66,15 @@ public class SubjectsListController {
         return "You're now in the Subjects List Menu";
     }
 
+    
+
+    @GetMapping("/test")
+    public void select() {
+        subjectsListService.select();
+        System.out.println("test executed properly");
+    }
+
+
+
 
 }

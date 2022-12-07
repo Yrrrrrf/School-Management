@@ -1,7 +1,6 @@
 package SchoolManagement.AcademicHistory.entity;
 
 
-import java.math.BigInteger;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;

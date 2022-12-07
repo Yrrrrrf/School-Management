@@ -40,9 +40,17 @@ public class SubjectsListService implements SubjectsListServiceInterface {
         return subjectListRepository.findByRecommendedSemester(recommendedSemester);
     }
 
+
     public SubjectsList save(SubjectsList subject){
         return subjectListRepository.save(subject);
     }    
     
+
+    public boolean select() {
+        List<SubjectsList> list = subjectListRepository.select();
+        System.out.println(list);
+        System.out.println(list.size());
+        return true;
+    }
 
 }
