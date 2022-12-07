@@ -5,7 +5,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
-import SchoolManagement.AcademicHistory.entity.Subject;
+import SchoolManagement.AcademicHistory.entity.SubjectGrade;
 
 
 /**
@@ -15,14 +15,15 @@ import SchoolManagement.AcademicHistory.entity.Subject;
 @Repository
 public interface SubjectGradeServiceInterface {
 
-    public List<Subject> getAll();
-
     // Returns all the subjects that a student has taken, even if he has not passed them.
-    public List<Subject> getByStudentId(Long studentId);
-
-    public Subject getById(Long subjectId);
     
-    public Subject save(Subject subject);
+    public List<SubjectGrade> getAll();
+
+    public List<SubjectGrade> getByStudentId(Long studentId);
+    
+    public List<SubjectGrade> getBySubjectId(Long subjectId);
+
+    public SubjectGrade save(SubjectGrade subject);
 
     public void deleteById(Long subjectId);
 

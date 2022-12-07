@@ -1,7 +1,10 @@
 package SchoolManagement.AcademicHistory.entity;
 
 
+import java.math.BigInteger;
 import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
 // import java.util.List;
 
@@ -43,6 +46,7 @@ public class Student extends User {
 
     // ? Relation: Many Students can have a same Syllabys
     @ManyToOne
+    @JsonBackReference(value = "user-product")
     @JoinColumn(name = "idPlanDeEstudio", insertable = false, updatable = false)
     private Syllabus studentSyllabus;
 

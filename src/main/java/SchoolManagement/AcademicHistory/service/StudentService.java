@@ -31,7 +31,6 @@ public class StudentService implements StudentServiceInterface {
         return studentRepository.findById(studentId).orElse(null);
     }
 
-
     public List<Student> getByName(String name){
         return studentRepository.findByName(name);
     }

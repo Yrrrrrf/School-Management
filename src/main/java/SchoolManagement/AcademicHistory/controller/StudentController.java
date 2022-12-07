@@ -25,7 +25,7 @@ public class StudentController {
 
 
     @GetMapping("/all")
-    public List<Student> getAllSubjects() {
+    public List<Student> getAllStudents() {
         return studentService.getAll();
     }
 
@@ -71,6 +71,7 @@ public class StudentController {
     public String studentForm() {
         return "admin-view";
     }
+
 
     // @DeleteMapping("/delete_all")
     // public void deleteAll() {

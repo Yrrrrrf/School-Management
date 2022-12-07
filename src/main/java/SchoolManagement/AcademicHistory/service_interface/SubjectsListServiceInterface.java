@@ -13,16 +13,18 @@ import SchoolManagement.AcademicHistory.entity.SubjectsList;
  * Also implements more specific methods of the repository for the {@link SubjectList} class.
  */
 @Repository
-public interface SubjectListServiceInterface {
+public interface SubjectsListServiceInterface {
 
     public List<SubjectsList> getAll();
 
     public List<SubjectsList> getBySyllabusId(int syllabusId);
 
-    public SubjectsList getBySubjectId(int subjectId);
+    public List<SubjectsList> getBySubjectId(int subjectId);
     
+    public List<SubjectsList> getByRecommendedSemester(int recommendedSemester);
+
     public SubjectsList save(SubjectsList subject);
 
-    public void deleteById(Long subjectId);
+    // public void deleteBySyllabusIdAndSubjectId(Long syllabusId, Long subjectId);
 
 }

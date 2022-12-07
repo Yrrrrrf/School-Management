@@ -26,7 +26,7 @@ public class SyllabusController {
 
 
     @GetMapping("/all")
-    public List<Syllabus> getAllSubjects() {
+    public List<Syllabus> getAllSyllabus() {
         return syllabusService.getAll();
     }
 

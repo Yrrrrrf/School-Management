@@ -1,447 +1,157 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
-<head>
+  <head>
     <title>School Management</title>
-    <link rel="icon" type="image/x-icon" href="img/school.png">
-    
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    
-    <!--JQUERY-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <!-- FRAMEWORK BOOTSTRAP for page style-->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <!-- Solid Icons from Fontawesome-->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css">
-    <script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
-    <!-- Our css -->
-    <link rel="stylesheet" href="css/admin-view.css">
+  </head>
+  <body>
 
-    <!-- DATA TABLE -->
-	<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-	<script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.css">
-	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
-
-<script type="text/javascript">
-    $(document).ready(function() {
-        //Asegurate que el id que le diste a la tabla sea igual al texto despues del simbolo #
-        $('#studentList').DataTable();
-        $('#subjectList').DataTable();
-        $('#syllabusList').DataTable();
-    } );
-</script>
+    <h3>Project: "MC01"</h3>
+    <h6 style="font-family:Lucida Console";>v0.01 (pre-alpha)</h6>
 
 
-</head>
-
-
-<body class="bg-secondary">
-
-    <!-- Inicio del menu -->
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-        <div class="container-fluid">
-            <!-- icono o nombre -->
-            <a class="navbar-brand" href="admin-view.html">
-                <img src="img/school.png" style="width:32px;height:32px;"></img>
-                <span class="text-warning">MC01</span>
-            </a>                
-            <!-- boton del menu -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <!-- elementos del menu colapsable -->
-            <div class="collapse navbar-collapse" id="menu">
-
-                <ul class="navbar-nav me-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Inicio</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Registrar</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Listas</a>
-                    </li>
-
-                    <!-- <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Listas
-                        </a>
-                        <ul class="dropdown-menu bg-secondary" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">Alumnos</a></li>
-                            <li><a class="dropdown-item" href="#">Materias</a><li>   
-                            <li><a class="dropdown-item" href="#">Planes de Estudio</a></li>
-                        </ul>
-                    </li> -->
-                </ul>
-                <hr class="d-md-none text-white-50">
-                <!--boton Informacion -->    
-                <form class="d-flex">
-                    <a class="btn btn-info" href="https://github.com/Yrrrrrf/School-Management" role="button">Repository</a>
-                    <!-- <button class="btn btn-outline-warning d-none d-md-inline-block " type="submit">Repository</button> -->
-                </form>
-            </div>
-        </div>  
-    </nav>
-
-
-    <!-- Inicio del contenido -->
-    <div class="container">
-        <div class="mx-auto col-sm-8 main-section" id="myTab" role="tablist">
-
-            <ul class="nav nav-tabs justify-content-end">
-                <li class="nav-item">
-                    <a class="nav-link" id="subject-list-tab" data-toggle="tab" href="#subject-list" role="tab" aria-controls="list" aria-selected="false">Subject</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" id="student-list-tab" data-toggle="tab" href="#student-list" role="tab" aria-controls="list" aria-selected="false">Student</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" id="syllabus-list-tab" data-toggle="tab" href="#syllabus-list" role="tab" aria-controls="list" aria-selected="false">Syllabus</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" id="subject-form-tab" data-toggle="tab" href="#subject-form" role="tab" aria-controls="form" aria-selected="true">Subject Form</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" id="student-form-tab" data-toggle="tab" href="#student-form" role="tab" aria-controls="form" aria-selected="true">Student Form</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" id="syllabus-form-tab" data-toggle="tab" href="#syllabus-form" role="tab" aria-controls="form" aria-selected="true">Syllabus Form</a>
-                </li>
-            </ul>
-
-            <div class="tab-content" id="myTabContent">
-                <div class="tab-pane fade" id="subject-list" role="tabpanel" aria-labelledby="list-tab">
-                    <div class="card">
-                        <div class="card-header">
-                            <h4>Lista de Materias</h4>
-                        </div>
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <table id="subjectList" class="table table-bordered table-hover table-striped">
-                                    <thead class="thead-light">
-                                    <tr>
-                                        <th scope="col">id</th>
-                                        <th scope="col">nombre</th>
-                                        <th scope="col">creditos</th>
-                                        <th scope="col">area academica</th>
-                                        <th></th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    <tr>
-                                        <th scope="row">0</th>
-                                        <td>filosofia</td>
-                                        <td>11</td>
-                                        <td>vivir bien</td>
-                                        <td>
-                                            <a href="#"><i class="fas fa-edit"></i></a> | <a href="#"><i class="fas fa-user-times"></i></a>
-                                        </td>
-                                    </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="tab-pane fade" id="student-list" role="tabpanel" aria-labelledby="list-tab">
-                    <div class="card">
-                        <div class="card-header">
-                            <h4>Lista de Estudiantes</h4>
-                        </div>
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <table id="studentList" class="table table-bordered table-hover table-striped">
-                                    <thead class="thead-light">
-                                    <tr>
-                                        <th scope="col">#</th>
-                                        <th scope="col">First</th>
-                                        <th scope="col">Last</th>
-                                        <th scope="col">Username</th>
-                                        <th scope="col">E-mail</th>
-                                        <th></th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    <tr>
-                                        <th scope="row">1</th>
-                                        <td>Cristian</td>
-                                        <td>Ruiz</td>
-                                        <td>c.r.username</td>
-                                        <td>c.r.username@blog.com</td>
-                                        <td>
-                                            <a href="#"><i class="fas fa-edit"></i></a> | <a href="#"><i class="fas fa-user-times"></i></a>
-                                        </td>
-                                    </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="tab-pane fade" id="syllabus-list" role="tabpanel" aria-labelledby="list-tab">
-                    <div class="card">
-                        <div class="card-header">
-                            <h4>Lista de Estudiantes</h4>
-                        </div>
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <table id="syllabusList" class="table table-bordered table-hover table-striped">
-                                    <thead class="thead-light">
-                                    <tr>
-                                        <th scope="col">#</th>
-                                        <th scope="col">nombre</th>
-                                        <th scope="col">correo</th>
-                                        <th scope="col">Plan de estudio</th>
-                                        <th></th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    <tr>
-                                        <th scope="row">0</th>
-                                        <td>admin</td>
-                                        <td>admin@admin.com</td>
-                                        <td>ingenieria en computacion</td>
-                                        <td>
-                                            <a href="#"><i class="fas fa-edit"></i></a> | <a href="#"><i class="fas fa-user-times"></i></a>
-                                        </td>
-                                    </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="tab-pane fade" id="subject-form" role="tabpanel" aria-labelledby="form-tab">
-                    <div class="card">
-                        <div class="card-header">
-                            <h4>Formulario Materias</h4>
-                        </div>
-                        <div class="card-body">
-                            <form class="subjectForm" role="form" autocomplete="off"  action="subject/save" method="post">
-                                <div class="form-group row">
-                                    <label class="col-lg-3 col-form-label form-control-label">Nombre</label>
-                                    <div class="col-lg-9">
-                                        <!-- <input class="form-control" type="text" placeholder="nombre de la materia..."> -->
-                                        <input
-                                            type="text"
-                                            name="name"
-                                            id="name"
-                                            placeholder="subject name"
-                                        />
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-lg-3 col-form-label form-control-label">Creditos</label>
-                                    <div class="col-lg-9">
-                                        <!-- <input class="form-control" type="number" min="5" max="9" step="1" placeholder="#"> -->
-                                        <input
-                                            type="number"
-                                            name="credits"
-                                            id="credits"
-                                            placeholder="credits"
-                                        />
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-lg-3 col-form-label form-control-label">Area Academica</label>
-                                    <!-- <select class="form-select-lg">
-                                        <option selected>Open this select menu</option>
-                                        <option value="1">One</option>
-                                        <option value="2">Two</option>
-                                        <option value="3">Three</option>
-                                    </select> -->
-                                    <input
-                                        type="text"
-                                        name="academicArea"
-                                        id="academicArea"
-                                        placeholder="academic area"
-                                    />
-                                </div>
-                                <p>
-                                <div class="form-group row">
-                                    <div class="col-lg-12 text-center">
-                                        <button class="btn btn-primary" type="submit">Guardar</button>
-                                        <button class="btn btn-secondary" type="reset">Cancelar</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="tab-pane fade" id="student-form" role="tabpanel" aria-labelledby="form-tab">
-                    <div class="card">
-                        <div class="card-header">
-                            <h4>Formulario Alumnos</h4>
-                        </div>
-                        <div class="card-body">
-                            <form class="StudentForm" role="form" autocomplete="off" action="student/save" method="post">
-                                <div class="form-group row">
-                                    <label class="col-lg-3 col-form-label form-control-label">Nombre</label>
-                                    <div class="col-lg-9">
-                                        <!-- <input class="form-control" type="text" placeholder="nombre de la materia..."> -->
-                                        <input
-                                            type="text"
-                                            name="name"
-                                            id="name"
-                                            placeholder="subject name"
-                                        />
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-lg-3 col-form-label form-control-label">Apellido Paterno</label>
-                                    <div class="col-lg-9">
-                                        <!-- <input class="form-control" type="text" placeholder="apellido paterno..."> -->
-                                        <input
-                                            type="text"
-                                            name="fatherLastName"
-                                            id="fatherLastName"
-                                            placeholder="last name"
-                                        />
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-lg-3 col-form-label form-control-label">Apellido Materno</label>
-                                    <div class="col-lg-9">
-                                        <!-- <input class="form-control" type="text" placeholder="apellido materno..."> -->
-                                        <input
-                                            type="text"
-                                            name="motherLastName"
-                                            id="motherLastName"
-                                            placeholder="last name"
-                                        />
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-lg-3 col-form-label form-control-label">password:</label>
-                                    <div class="col-lg-9">
-                                        <!-- <input class="form-control" type="text" placeholder="apellido materno..."> -->
-                                        <input
-                                            type="text"
-                                            name="password"
-                                            id="password"
-                                            placeholder="password"
-                                        />
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-lg-3 col-form-label form-control-label">mail:</label>
-                                    <div class="col-lg-9">
-                                        <!-- <input class="form-control" type="text" placeholder="apellido materno..."> -->
-                                        <input
-                                            type="text"
-                                            name="mail"
-                                            id="mail"
-                                            placeholder="mail@something.com"
-                                        />
-                                    </div>
-                                </div>
-
-                                <div class="form-group row">
-                                    <label class="col-lg-3 col-form-label form-control-label">FechaNacimiento:</label>
-                                    <div class="col-lg-9">
-                                        <!-- <input class="form-control" type="text" placeholder="apellido materno..."> -->
-                                        <input
-                                            type="date"
-                                            name="birthday"
-                                            id="birthday"
-                                        />
-                                    </div>
-                                </div>
-
-                                <div class="form-group row">
-                                    <label class="col-lg-3 col-form-label form-control-label">Plan De Estidio</label>
-                                    <!-- <select>
-                                        <option selected>Open this select menu</option>
-                                        <option value="3">Ingenieria en Computacion</option>
-                                    </select> -->
-                                    <input
-                                        type="number"
-                                        name="syllabusId"
-                                        id="syllabusId"
-                                        placeholder="syllabus Id"
-                                    />
-                                </div>
-                                <p>
-                                <div class="form-group row">
-                                    <div class="col-lg-12 text-center">
-                                        <button class="btn btn-primary" type="submit">Guardar</button>
-                                        <button class="btn btn-secondary" type="reset">Cancelar</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                <div class="tab-pane fade" id="syllabus-form" role="tabpanel" aria-labelledby="form-tab">
-                    <div class="card">
-                        <div class="card-header">
-                            <h4>Formulario Plan De Estudios</h4>
-                        </div>
-                        <div class="card-body">
-                            <form class="SyllabusForm" role="form" autocomplete="off" action="syllabus/save" method="post">
-                                <div class="form-group row">
-                                    <label class="col-lg-3 col-form-label form-control-label">Nombre</label>
-                                    <div class="col-lg-9">
-                                        <!-- <input class="form-control" type="text" placeholder="nombre de la materia..."> -->
-                                        <input
-                                        type="text"
-                                        name="name"
-                                        id="name"
-                                        placeholder="nombre de plan de estidio..."
-                                        />
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-lg-3 col-form-label form-control-label">Clave</label>
-                                    <div class="col-lg-9">
-                                        <!-- <input class="form-control" type="text" placeholder="apellido paterno..."> -->
-                                        <input
-                                            type="text"
-                                            name="key"
-                                            id="key"
-                                            placeholder="ICO_2019..."
-                                        />
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-lg-3 col-form-label form-control-label">Fecha de Aprovacion</label>
-                                    <div class="col-lg-9">
-                                        <!-- <input class="form-control" type="text" placeholder="apellido materno..."> -->
-                                        <input
-                                            type="date"
-                                            name="approvalDate"
-                                            id="approvalDate"
-                                        />
-                                    </div>
-                                </div>
-                                <p>
-                                <div class="form-group row">
-                                    <div class="col-lg-12 text-center">
-                                        <button class="btn btn-primary" type="submit">Guardar</button>
-                                        <button class="btn btn-secondary" type="reset">Cancelar</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-        
+    <section>
+        <div class="SubjectForm">
+            <form action="subject/save" method="post">
+                <label for="name">Subject name:</label>
+                <input
+                    type="text"
+                    name="name"
+                    id="name"
+                    placeholder="subject name"
+                />
+                <label for="Creditos:">Credits:</label>
+                <input
+                    type="number"
+                    name="credits"
+                    id="credits"
+                    placeholder="credits"
+                />
+                <label for="Area Academica:">Academic Area:</label>
+                <input
+                    type="text"
+                    name="academicArea"
+                    id="academicArea"
+                    placeholder="academic area"
+                />
+            <button>Add</button>
+        </form>
         </div>
-    </div>
-</body>
+        <br />
+    </section>
 
+    <section>
+        <div class="StudentForm">
+            <form action="student/save" method="post">
+                <label for="name">Student name:</label>
+                <input
+                    type="text"
+                    name="name"
+                    id="name"
+                    placeholder="name"
+                />
+                <label for="fatherLastName">father LastName:</label>
+                <input
+                    type="text"
+                    name="fatherLastName"
+                    id="fatherLastName"
+                    placeholder="last name"
+                />
+                <label for="motherLastName">mother LastName:</label>
+                <input
+                    type="text"
+                    name="motherLastName"
+                    id="motherLastName"
+                    placeholder="last name"
+                />
+                <label for="birthday:">FechaNacimiento:</label>
+                <input
+                    type="date"
+                    name="birthday"
+                    id="birthday"
+                />
+                <label for="mail">mail:</label>
+                <input
+                    type="text"
+                    name="mail"
+                    id="mail"
+                    placeholder="mail@something.com"
+                />
+                <label for="password">password:</label>
+                <input
+                    type="text"
+                    name="password"
+                    id="password"
+                    placeholder="password"
+                />
+                <label for="syllabus:">PlanDeEstudio:</label>
+                <input
+                    type="number"
+                    name="syllabusId"
+                    id="syllabusId"
+                    placeholder="syllabus Id"
+                />
+            <button>Add</button>
+        </form>
+        </div>
+        <br />
+    </section>
+
+    <section>
+        <div class="SyllabusForm">
+            <form action="syllabus/save" method="post">
+                <label for="name">PlanDeEstudioNombre:</label>
+                <input
+                    type="text"
+                    name="name"
+                    id="name"
+                    placeholder="syllabus"
+                />
+                <label for="key">Clave:</label>
+                <input
+                    type="text"
+                    name="key"
+                    id="key"
+                    placeholder="ICO_2019"
+                />
+                <label for="approvalDate:">FechaAprobacion:</label>
+                <input
+                    type="date"
+                    name="approvalDate"
+                    id="approvalDate"
+                />
+            <button>Add</button>
+        </form>
+        </div>
+    </section>
+
+    <section>
+        <div class="SubjectsListForm">
+            <form action="subjects_list/save" method="post">
+                <label for="syllabusId">id Plan De Estudio:</label>
+                <input
+                    type="number"
+                    name="syllabusId"
+                    id="syllabusId"
+                />
+                <label for="subjectId">id Materia:</label>
+                <input
+                    type="number"
+                    name="subjectId"
+                    id="subjectId"
+                />
+                <label for="recommendedSemester:">Semestre Recomendado:</label>
+                <input
+                    type="number"
+                    name="recommendedSemester"
+                    id="recommendedSemester"
+                />
+            <button>Add</button>
+        </form>
+        </div>
+    </section>
+    
+  </body>
 </html>

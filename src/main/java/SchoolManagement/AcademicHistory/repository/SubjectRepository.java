@@ -23,5 +23,4 @@ public interface SubjectRepository extends CrudRepository<Subject, Long> {
 
     public List<Subject> findByCreditsOrderByNameAsc(int credits);
 
-    
 }

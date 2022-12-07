@@ -30,7 +30,7 @@ public class Subject {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "idMateria", nullable = false)
+    @Column(name = "idMateria")
     private BigInteger id;
 
     @Column(name = "nombre", nullable = false, length = 63)

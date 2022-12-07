@@ -33,7 +33,7 @@ public class Syllabus {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idPlanDeEstudio", nullable = false)
-    private BigInteger id;
+    private int id;
 
     @Column(name = "nombre", nullable = false, length = 63)
     private String name;

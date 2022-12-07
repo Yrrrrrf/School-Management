@@ -2,6 +2,7 @@ package SchoolManagement.AcademicHistory.repository;
 
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
@@ -19,7 +20,7 @@ public interface StudentRepository extends CrudRepository<Student, Long> {
 
     public List<Student> findByNameOrderByNameAsc(String name);
 
-    public Student findByMail(String mail);
+    public Optional<Student> findByMail(String mail);
 
     public List<Student> findBySyllabusId(int syllabusId);    
 
