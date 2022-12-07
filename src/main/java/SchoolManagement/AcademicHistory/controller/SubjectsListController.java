@@ -27,7 +27,10 @@ public class SubjectsListController {
     @GetMapping("/all")
     @ResponseBody
     public List<SubjectsList> getAllSubjectsList() {
-        return subjectsListService.getAll();
+        List<SubjectsList> list = subjectsListService.getAll();
+        System.out.println(list.isEmpty());
+        System.out.println("All Subjects List");
+        return list;
     }
 
 
@@ -46,7 +49,7 @@ public class SubjectsListController {
     }
 
 
-    @GetMapping("/red/{recommendedSemester}")
+    @GetMapping("/rec/{recommendedSemester}")
     public List<SubjectsList> getByCredits(@PathVariable("recommendedSemester") int recommendedSemester) {
         return subjectsListService.getByRecommendedSemester(recommendedSemester);
     }

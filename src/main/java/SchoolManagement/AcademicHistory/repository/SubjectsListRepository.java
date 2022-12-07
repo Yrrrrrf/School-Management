@@ -21,4 +21,6 @@ public interface SubjectsListRepository extends CrudRepository<SubjectsList, Lon
 
     public List<SubjectsList> findByRecommendedSemester(int recommendedSemester);
 
+    // public List<SubjectsList> findBySubjectsListKeySyllabusIdAndSubjectsListKeySubjectId(int syllabusId, int subjectId);
+
 }
