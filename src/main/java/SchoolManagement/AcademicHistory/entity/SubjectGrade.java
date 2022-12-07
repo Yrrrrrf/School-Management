@@ -1,6 +1,8 @@
 package SchoolManagement.AcademicHistory.entity;
 
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
@@ -38,10 +40,13 @@ public class SubjectGrade {
     @Column(name = "calificacion", nullable = false)
     private float grade;
 
+
+    @JsonBackReference
     @ManyToOne
     @JoinColumn(name = "idAlumno", insertable = false, updatable = false)
     private Student student;
 
+    @JsonBackReference
     @ManyToOne
     @JoinColumn(name = "idMateria", insertable = false, updatable = false)
     private Subject subject;

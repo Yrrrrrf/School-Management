@@ -18,39 +18,37 @@ import SchoolManagement.AcademicHistory.service_interface.SubjectsListServiceInt
 public class SubjectsListService implements SubjectsListServiceInterface {
 
     @Autowired
-    private SubjectsListRepository subjectListRepository;
+    private SubjectsListRepository subjectsListRepository;
 
 
     public List<SubjectsList> getAll(){
-        return (List<SubjectsList>) subjectListRepository.findAll();
+        return (List<SubjectsList>) subjectsListRepository.findAll();
     }
 
 
     public List<SubjectsList> getBySyllabusId(int syllabusId) {
-        return subjectListRepository.findBySyllabusId(syllabusId);
+        return subjectsListRepository.findBySyllabusId(syllabusId);
     }
     
     
     public List<SubjectsList> getBySubjectId(int subjectId) {
-        return subjectListRepository.findBySyllabusId(subjectId);
+        return subjectsListRepository.findBySyllabusId(subjectId);
     }
 
 
     public List<SubjectsList> getByRecommendedSemester(int recommendedSemester) {
-        return subjectListRepository.findByRecommendedSemester(recommendedSemester);
+        return subjectsListRepository.findByRecommendedSemester(recommendedSemester);
+    }
+
+
+    public SubjectsList getBySyllabusIdAndSubjectId(int syllabusId, int subjectId) {
+        return subjectsListRepository.findBySyllabusIdAndSubjectId(syllabusId, subjectId);
     }
 
 
     public SubjectsList save(SubjectsList subject){
-        return subjectListRepository.save(subject);
-    }    
-    
-
-    public boolean select() {
-        List<SubjectsList> list = subjectListRepository.select();
-        System.out.println(list);
-        System.out.println(list.size());
-        return true;
+        return subjectsListRepository.save(subject);
     }
+
 
 }

@@ -17,14 +17,12 @@ public interface SubjectsListServiceInterface {
 
     public List<SubjectsList> getAll();
 
+    public List<SubjectsList> getBySubjectId(int subjectId);
+
     public List<SubjectsList> getBySyllabusId(int syllabusId);
 
-    public List<SubjectsList> getBySubjectId(int subjectId);
-    
-    public List<SubjectsList> getByRecommendedSemester(int recommendedSemester);
+    public SubjectsList getBySyllabusIdAndSubjectId(int syllabusId, int subjectId);
 
     public SubjectsList save(SubjectsList subject);
-
-    // public void deleteBySyllabusIdAndSubjectId(Long syllabusId, Long subjectId);
 
 }

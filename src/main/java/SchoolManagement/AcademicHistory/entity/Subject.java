@@ -4,6 +4,8 @@ package SchoolManagement.AcademicHistory.entity;
 import java.math.BigInteger;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -45,10 +47,12 @@ public class Subject {
 
     // TODO: Check if this is really necessary
     // ? Relation: A Subject can be in many Syllabus
+    @JsonBackReference
     @OneToMany(mappedBy = "subject")
     private List<SubjectsList> subjectsList;
 
     // ? Relation: A Subject can be in many Kardex
+    @JsonBackReference
     @OneToMany(mappedBy = "subject")
     private List<SubjectGrade> subjectsGrade;
 

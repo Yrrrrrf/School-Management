@@ -45,5 +45,4 @@ public class SyllabusService implements SyllabusServiceInterface {
     public void deleteById(Long subjectId){
         syllabusRepository.deleteById(subjectId);
     }
-
 }

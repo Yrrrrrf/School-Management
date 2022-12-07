@@ -1,8 +1,11 @@
 package SchoolManagement.AcademicHistory.entity;
 
 
+import java.math.BigInteger;
 import java.sql.Date;
 import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -33,7 +36,7 @@ public class Syllabus {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idPlanDeEstudio", nullable = false)
-    private int id;
+    private BigInteger id;
 
     @Column(name = "nombre", nullable = false, length = 63)
     private String name;
@@ -46,10 +49,12 @@ public class Syllabus {
 
 
     // ? Relation: A Syllabus can have many Subjects
+    @JsonBackReference
     @OneToMany(mappedBy = "syllabus")
     private List<SubjectsList> subjectsList;
 
     // ? Relation: A Syllabus can be taken by many Students
+    @JsonBackReference
     @OneToMany(mappedBy = "studentSyllabus")
     private List<Student> studentsList;
     

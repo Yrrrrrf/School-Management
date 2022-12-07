@@ -1,11 +1,10 @@
 package SchoolManagement.AcademicHistory.entity;
 
 
+import java.math.BigInteger;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-
-// import java.util.List;
 
 import SchoolManagement.model.User;
 import jakarta.persistence.Column;
@@ -40,16 +39,17 @@ public class Student extends User {
     private String password;
 
     @Column(name = "idPlanDeEstudio", nullable = false)
-    private int syllabusId;
+    private BigInteger syllabusId;
 
 
     // ? Relation: Many Students can have a same Syllabys
+    @JsonBackReference
     @ManyToOne
-    @JsonBackReference(value = "user-product")
     @JoinColumn(name = "idPlanDeEstudio", insertable = false, updatable = false)
     private Syllabus studentSyllabus;
 
     // ? Relation: A Student can have many SubjectGrade's
+    @JsonBackReference
     @OneToMany(mappedBy = "student")
     private List<SubjectGrade> kardex;
 

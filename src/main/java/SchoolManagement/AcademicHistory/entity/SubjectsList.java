@@ -2,16 +2,22 @@ package SchoolManagement.AcademicHistory.entity;
 
 
 import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Column;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import jakarta.persistence.Column;
-import jakarta.persistence.EmbeddedId;
+
+import java.math.BigInteger;
+
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 
 
 /**
@@ -25,19 +31,27 @@ import jakarta.persistence.EmbeddedId;
 @Table(name = "ListaMateria")
 public class SubjectsList {
 
-    @EmbeddedId
-    @Column(name = "idListaMaterias")
-    private SubjectsListPK id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "idListaDeMaterias", nullable = false)
+    private BigInteger id;
+
+    @Column(name = "idPlanDeEstudio", nullable = false)
+    private BigInteger syllabusId;
+
+    @Column(name = "idMateria", nullable = false)
+    private BigInteger subjectId;
 
     @Column(name = "semestreRecomendado", nullable = false)
     private int recommendedSemester;
 
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @JsonManagedReference
+    @ManyToOne
     @JoinColumn(name = "idPlanDeEstudio", insertable = false, updatable = false)
     private Syllabus syllabus;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne
     @JoinColumn(name = "idMateria", insertable = false, updatable = false)
     private Subject subject;
 

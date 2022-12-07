@@ -27,15 +27,11 @@ public class SubjectsListController {
     @GetMapping("/all")
     @ResponseBody
     public List<SubjectsList> getAllSubjectsList() {
-        List<SubjectsList> list = subjectsListService.getAll();
-        System.out.println(list.isEmpty());
-        System.out.println("All Subjects List");
-        return list;
+        return subjectsListService.getAll();
     }
 
-
-    @GetMapping("subject/{subjectId}")
-    public List<SubjectsList> getById(@PathVariable("subjectId") int subjectId) {
+    @GetMapping("id/{subjectId}")
+    public List<SubjectsList> getById(@PathVariable("id") int subjectId) {
         return subjectsListService.getBySubjectId(subjectId);
     }
 
@@ -65,16 +61,6 @@ public class SubjectsListController {
     public String subjectMenu() {
         return "You're now in the Subjects List Menu";
     }
-
-    
-
-    @GetMapping("/test")
-    public void select() {
-        subjectsListService.select();
-        System.out.println("test executed properly");
-    }
-
-
 
 
 }
