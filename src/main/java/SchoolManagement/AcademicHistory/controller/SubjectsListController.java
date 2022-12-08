@@ -30,7 +30,7 @@ public class SubjectsListController {
         return subjectsListService.getAll();
     }
 
-    @GetMapping("id/{subjectId}")
+    @GetMapping("/{id}")
     public List<SubjectsList> getById(@PathVariable("id") int subjectId) {
         return subjectsListService.getBySubjectId(subjectId);
     }
