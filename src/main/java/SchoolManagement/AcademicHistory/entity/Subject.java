@@ -32,7 +32,7 @@ public class Subject {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "idMateria")
+    @Column(name = "idMateria", nullable = false)
     private BigInteger id;
 
     @Column(name = "nombre", nullable = false, length = 63)
@@ -45,7 +45,6 @@ public class Subject {
     private String academicArea;
 
 
-    // TODO: Check if this is really necessary
     // ? Relation: A Subject can be in many Syllabus
     @JsonBackReference
     @OneToMany(mappedBy = "subject")
@@ -53,7 +52,7 @@ public class Subject {
 
     // ? Relation: A Subject can be in many Kardex
     @JsonBackReference
-    @OneToMany(mappedBy = "subject")
+    @OneToMany(mappedBy = "subjectGrade")
     private List<SubjectGrade> subjectsGrade;
 
 

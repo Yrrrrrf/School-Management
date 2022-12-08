@@ -61,7 +61,6 @@ public class SubjectController {
     }
     
     
-    // TODO: Fix this
     @DeleteMapping("/delete/{id}")
     public void deleteById(@PathVariable("id") Long subjectId) {
         subjectService.deleteById(subjectId);

@@ -32,7 +32,7 @@ public class SubjectsListService implements SubjectsListServiceInterface {
     
     
     public List<SubjectsList> getBySubjectId(Long subjectId) {
-        return subjectsListRepository.findBySyllabusId(subjectId);
+        return subjectsListRepository.findBySubjectId(subjectId);
     }
 
 
@@ -41,10 +41,14 @@ public class SubjectsListService implements SubjectsListServiceInterface {
     }
 
 
-    public SubjectsList getBySyllabusIdAndSubjectId(Long syllabusId, Long subjectId) {
-        return subjectsListRepository.findBySyllabusIdAndSubjectId(syllabusId, subjectId);
-    }
+    // public SubjectsList getBySyllabusIdAndSubjectId(Long syllabusId, Long subjectId) {
+    //     return subjectsListRepository.findBySyllabusIdAndSubjectId(syllabusId, subjectId);
+    // }
 
+
+    public List<SubjectsList> getBySyllabusIdAndRecommendedSemester(Long syllabusId, Long recommendedSemester) {
+        return subjectsListRepository.findBySyllabusIdAndRecommendedSemester(syllabusId, recommendedSemester);
+    }
 
     public SubjectsList save(SubjectsList subject){
         return subjectsListRepository.save(subject);

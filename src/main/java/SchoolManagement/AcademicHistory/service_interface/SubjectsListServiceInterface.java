@@ -21,7 +21,7 @@ public interface SubjectsListServiceInterface {
 
     public List<SubjectsList> getBySyllabusId(Long syllabusId);
 
-    public SubjectsList getBySyllabusIdAndSubjectId(Long syllabusId, Long subjectId);
+    public List<SubjectsList> getBySyllabusIdAndRecommendedSemester(Long syllabusId, Long recommendedSemester);
 
     public SubjectsList save(SubjectsList subject);
 

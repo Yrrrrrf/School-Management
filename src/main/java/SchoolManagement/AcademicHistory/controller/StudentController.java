@@ -54,7 +54,6 @@ public class StudentController {
     }
 
 
-    // TODO: Fix this
     @DeleteMapping("/delete/{studentId}")
     public void deleteById(@PathVariable("studentId") Long studentId) {
         studentService.deleteById(studentId);

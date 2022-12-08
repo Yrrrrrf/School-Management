@@ -1,11 +1,15 @@
 package SchoolManagement.AcademicHistory.entity;
 
 
+import java.math.BigInteger;
+
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import jakarta.persistence.Column;
-import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
@@ -24,31 +28,40 @@ import lombok.*;
 @Table(name = "CalificacionMateria")
 public class SubjectGrade {
 
-    @EmbeddedId
-    @Column(name = "idCalificaion")
-    private SubjectGradePK id;
+    // @EmbeddedId
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "idCalificaion", nullable = false)
+    private BigInteger id;
+    
+    @Column(name = "idMateria", nullable = false)
+    private BigInteger subjectId;
 
-    @Column(name = "primeraCal", nullable = false)
+    @Column(name = "idAlumno", nullable = false)
+    private BigInteger studentId;
+
+    @Column(name = "primeraCal")
     private float firstEvaluation;
 
-    @Column(name = "segundaCal", nullable = false)
+    @Column(name = "segundaCal")
     private float secondEvaluation;
 
-    @Column(name = "terceraCal", nullable = false)
+    @Column(name = "terceraCal")
     private float thirdEvaluation;
 
-    @Column(name = "calificacion", nullable = false)
+    @Column(name = "calificacion")
     private float grade;
 
 
-    @JsonBackReference
+    // @JsonBackReference
     @ManyToOne
     @JoinColumn(name = "idAlumno", insertable = false, updatable = false)
     private Student student;
 
-    @JsonBackReference
+
+    // @JsonBackReference
     @ManyToOne
     @JoinColumn(name = "idMateria", insertable = false, updatable = false)
-    private Subject subject;
+    private Subject subjectGrade;
 
 }

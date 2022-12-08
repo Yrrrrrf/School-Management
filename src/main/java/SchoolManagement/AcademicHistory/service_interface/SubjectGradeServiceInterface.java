@@ -23,6 +23,8 @@ public interface SubjectGradeServiceInterface {
     
     public List<SubjectGrade> getBySubjectId(Long subjectId);
 
+    public SubjectGrade getBySubjectIdAndStudentId(Long subjectId, Long studentId);
+
     public SubjectGrade save(SubjectGrade subject);
 
     public void deleteById(Long subjectId);

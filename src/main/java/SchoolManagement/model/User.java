@@ -1,7 +1,7 @@
 package SchoolManagement.model;
 
 
-import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.sql.Date;
 
 
@@ -28,9 +28,9 @@ import lombok.*;
 public abstract class User {
 
     @Id  // Primary key
-    @Column(name = "idPersona")
     @GeneratedValue(strategy = GenerationType.IDENTITY)  // Autoincrement
-    private BigDecimal id;
+    @Column(name = "idPersona", nullable = false)
+    private BigInteger id;
 
     @Column(name = "nombre", nullable = false, length = 63)
     private String name;

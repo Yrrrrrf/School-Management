@@ -31,8 +31,8 @@ public class SubjectsListController {
     }
 
 
-    @GetMapping("/{id}")
-    public List<SubjectsList> getById(@PathVariable("id") Long subjectId) {
+    @GetMapping("subject/{subjectId}")
+    public List<SubjectsList> getBySubject(@PathVariable("subjectId") Long subjectId) {
         return subjectsListService.getBySubjectId(subjectId);
     }
 
@@ -47,9 +47,17 @@ public class SubjectsListController {
 
 
     @GetMapping("/semester/{recommendedSemester}")
-    public List<SubjectsList> getByCredits(@PathVariable("recommendedSemester") Long recommendedSemester) {
+    public List<SubjectsList> getByRecommendedSemester(@PathVariable("recommendedSemester") Long recommendedSemester) {
         return subjectsListService.getByRecommendedSemester(recommendedSemester);
     }
+
+
+    @GetMapping("/s={syllabusId}&r={recommendedSemester}")
+    public List<SubjectsList> getBySyllabusIdAndRecommendedSemester(@PathVariable("syllabusId") Long syllabusId, @PathVariable("recommendedSemester") Long recommendedSemester) {
+        return subjectsListService.getBySyllabusIdAndRecommendedSemester(syllabusId, recommendedSemester);
+        // return subjectsListService.getBySyllabusIdAndRecommendedSemester(syllabusId, recommendedSemester);
+    }
+
 
 
     @PostMapping("/save")
