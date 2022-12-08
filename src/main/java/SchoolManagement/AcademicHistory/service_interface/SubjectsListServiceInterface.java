@@ -17,11 +17,11 @@ public interface SubjectsListServiceInterface {
 
     public List<SubjectsList> getAll();
 
-    public List<SubjectsList> getBySubjectId(int subjectId);
+    public List<SubjectsList> getBySubjectId(Long subjectId);
 
-    public List<SubjectsList> getBySyllabusId(int syllabusId);
+    public List<SubjectsList> getBySyllabusId(Long syllabusId);
 
-    public SubjectsList getBySyllabusIdAndSubjectId(int syllabusId, int subjectId);
+    public SubjectsList getBySyllabusIdAndSubjectId(Long syllabusId, Long subjectId);
 
     public SubjectsList save(SubjectsList subject);
 

@@ -26,22 +26,22 @@ public class SubjectsListService implements SubjectsListServiceInterface {
     }
 
 
-    public List<SubjectsList> getBySyllabusId(int syllabusId) {
+    public List<SubjectsList> getBySyllabusId(Long syllabusId) {
         return subjectsListRepository.findBySyllabusId(syllabusId);
     }
     
     
-    public List<SubjectsList> getBySubjectId(int subjectId) {
+    public List<SubjectsList> getBySubjectId(Long subjectId) {
         return subjectsListRepository.findBySyllabusId(subjectId);
     }
 
 
-    public List<SubjectsList> getByRecommendedSemester(int recommendedSemester) {
+    public List<SubjectsList> getByRecommendedSemester(Long recommendedSemester) {
         return subjectsListRepository.findByRecommendedSemester(recommendedSemester);
     }
 
 
-    public SubjectsList getBySyllabusIdAndSubjectId(int syllabusId, int subjectId) {
+    public SubjectsList getBySyllabusIdAndSubjectId(Long syllabusId, Long subjectId) {
         return subjectsListRepository.findBySyllabusIdAndSubjectId(syllabusId, subjectId);
     }
 

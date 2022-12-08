@@ -21,4 +21,6 @@ public interface SubjectGradeRepository extends CrudRepository<SubjectGrade, Lon
 
     public List<SubjectGrade> findByGrade(float grade);
 
+    public SubjectGrade findBySubjectIdAndStudentId(Long subjectId, Long studentId);
+
 }

@@ -37,6 +37,10 @@ public class SubjectGradeService implements SubjectGradeServiceInterface {
     }
 
 
+    public SubjectGrade getBySubjectIdAndStudentId(Long subjectId, Long studentId) {
+        return subjectRepository.findBySubjectIdAndStudentId(subjectId, studentId);
+    }
+
     public SubjectGrade save(SubjectGrade subject){
         return subjectRepository.save(subject);
     }
@@ -45,6 +49,7 @@ public class SubjectGradeService implements SubjectGradeServiceInterface {
     public void deleteById(Long subjectId){
         subjectRepository.deleteById(subjectId);
     }
+
 
 
 }

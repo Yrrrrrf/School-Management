@@ -30,14 +30,15 @@ public class SubjectsListController {
         return subjectsListService.getAll();
     }
 
+
     @GetMapping("/{id}")
-    public List<SubjectsList> getById(@PathVariable("id") int subjectId) {
+    public List<SubjectsList> getById(@PathVariable("id") Long subjectId) {
         return subjectsListService.getBySubjectId(subjectId);
     }
 
 
     @GetMapping("/syllabus/{syllabusId}")
-    public List<SubjectsList> getBySyllabusId(@PathVariable("syllabusId") int syllabusId) {
+    public List<SubjectsList> getBySyllabusId(@PathVariable("syllabusId") Long syllabusId) {
         List<SubjectsList> list = subjectsListService.getBySyllabusId(syllabusId);
         list.forEach(System.out::println);
         System.out.println(list.size());
@@ -45,8 +46,8 @@ public class SubjectsListController {
     }
 
 
-    @GetMapping("/rec/{recommendedSemester}")
-    public List<SubjectsList> getByCredits(@PathVariable("recommendedSemester") int recommendedSemester) {
+    @GetMapping("/semester/{recommendedSemester}")
+    public List<SubjectsList> getByCredits(@PathVariable("recommendedSemester") Long recommendedSemester) {
         return subjectsListService.getByRecommendedSemester(recommendedSemester);
     }
 

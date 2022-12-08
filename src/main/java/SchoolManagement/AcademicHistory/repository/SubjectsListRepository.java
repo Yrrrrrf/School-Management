@@ -16,13 +16,13 @@ import SchoolManagement.AcademicHistory.entity.SubjectsList;
 @Repository
 public interface SubjectsListRepository extends CrudRepository<SubjectsList, Long> {
 
-    public List<SubjectsList> findBySyllabusId(int syllabusId);
+    public List<SubjectsList> findBySyllabusId(Long syllabusId);
 
-    public List<SubjectsList> findBySubjectId(int subjectId);
+    public List<SubjectsList> findBySubjectId(Long subjectId);
 
-    public List<SubjectsList> findByRecommendedSemester(int recommendedSemester);
+    public List<SubjectsList> findByRecommendedSemester(Long recommendedSemester);
 
-    public SubjectsList findBySyllabusIdAndSubjectId(int syllabusId, int subjectId);
+    public SubjectsList findBySyllabusIdAndSubjectId(Long syllabusId, Long subjectId);
 
     @Query("from SubjectsList")
     List<SubjectsList> select();
