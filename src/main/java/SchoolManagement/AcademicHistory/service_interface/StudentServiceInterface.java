@@ -28,3 +28,4 @@ public interface StudentServiceInterface {
     public void deleteById(Long subjectId);
 
 }
+

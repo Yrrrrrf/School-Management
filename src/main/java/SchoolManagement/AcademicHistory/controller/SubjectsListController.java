@@ -16,6 +16,9 @@ import SchoolManagement.AcademicHistory.entity.SubjectsList;
 import SchoolManagement.AcademicHistory.service.SubjectsListService;
 
 
+/**
+ * {@link Subject} controller
+ */
 @RestController
 @RequestMapping("/subjects_list")
 public class SubjectsListController {
@@ -24,6 +27,10 @@ public class SubjectsListController {
     private SubjectsListService subjectsListService;
 
 
+    /**
+     * Get all subjects that are inside any syllabus
+     * @return
+     */
     @GetMapping("/all")
     @ResponseBody
     public List<SubjectsList> getAllSubjectsList() {
@@ -31,12 +38,22 @@ public class SubjectsListController {
     }
 
 
+    /**
+     * Get subject by id
+     * @param subjectId
+     * @return Subject
+     */
     @GetMapping("subject/{subjectId}")
     public List<SubjectsList> getBySubject(@PathVariable("subjectId") Long subjectId) {
         return subjectsListService.getBySubjectId(subjectId);
     }
 
 
+    /**
+     * Get subject by name
+     * @param name
+     * @return List of subjects
+     */
     @GetMapping("/syllabus/{syllabusId}")
     public List<SubjectsList> getBySyllabusId(@PathVariable("syllabusId") Long syllabusId) {
         List<SubjectsList> list = subjectsListService.getBySyllabusId(syllabusId);
@@ -46,12 +63,22 @@ public class SubjectsListController {
     }
 
 
+    /**
+     * Get subject by name
+     * @param name
+     * @return List of subjects
+     */
     @GetMapping("/semester/{recommendedSemester}")
     public List<SubjectsList> getByRecommendedSemester(@PathVariable("recommendedSemester") Long recommendedSemester) {
         return subjectsListService.getByRecommendedSemester(recommendedSemester);
     }
 
 
+    /**
+     * Get subject by name
+     * @param name
+     * @return List of subjects
+     */
     @GetMapping("/s={syllabusId}&r={recommendedSemester}")
     public List<SubjectsList> getBySyllabusIdAndRecommendedSemester(@PathVariable("syllabusId") Long syllabusId, @PathVariable("recommendedSemester") Long recommendedSemester) {
         return subjectsListService.getBySyllabusIdAndRecommendedSemester(syllabusId, recommendedSemester);
@@ -59,17 +86,15 @@ public class SubjectsListController {
     }
 
 
-
+    /**
+     * Save subject
+     * @param subject
+     * @return Subject
+     */
     @PostMapping("/save")
     public SubjectsList save(@Validated SubjectsList subject) {
         return subjectsListService.save(subject);
     }
     
-
-    @GetMapping("/data")
-    public String subjectMenu() {
-        return "You're now in the Subjects List Menu";
-    }
-
 
 }

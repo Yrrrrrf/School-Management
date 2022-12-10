@@ -16,6 +16,9 @@ import SchoolManagement.AcademicHistory.entity.Syllabus;
 import SchoolManagement.AcademicHistory.service.SyllabusService;
 
 
+/**
+ * {@link Syllabus} controller
+ */
 @RestController
 @RequestMapping("/syllabus")
 public class SyllabusController {
@@ -24,30 +27,53 @@ public class SyllabusController {
     private SyllabusService syllabusService;
 
 
+    /**
+     * Get all syllabus
+     * @return List of syllabus
+     */
     @GetMapping("/all")
     public List<Syllabus> getAllSyllabus() {
         return syllabusService.getAll();
     }
 
 
+    /**
+     * Get syllabus by id
+     * @param studentId
+     * @return Syllabus
+     */
     @GetMapping("/{syllabusId}")
     public Syllabus getById(@PathVariable("syllabusId") Long studentId) {
         return syllabusService.getById(studentId);
     }
 
 
+    /**
+     * Get syllabus by name
+     * @param name
+     * @return Syllabus
+     */
     @GetMapping("/name/{name}")
     public Syllabus getByName(@PathVariable("name") String name) {
         return syllabusService.getByName(name);
     }
 
 
+    /**
+     * Save syllabus
+     * @param syllabus
+     * @return Syllabus
+     */
     @PostMapping("/save")
     public Syllabus save(@Validated Syllabus syllabus) {
         return syllabusService.save(syllabus);
     }
 
 
+    /**
+     * Delete syllabus by id
+     * @param syllabusId
+     */
     @DeleteMapping("/delete/{syllabusId}")
     public void deleteById(@PathVariable("syllabusId") Long syllabusId) {
     // public ResponseEntity deleteById(@PathVariable("syllabusId") Long syllabusId) {
@@ -55,10 +81,5 @@ public class SyllabusController {
         // return ResponseEntity.ok(syllabusId + " deleted");
     }
 
-
-    @GetMapping("/data")
-    public String syllabusMenu() {
-        return "You're now in the SyllabusController";
-    }
 
 }

@@ -4,7 +4,6 @@ package SchoolManagement.AcademicHistory.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.ui.Model;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,9 +15,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 import SchoolManagement.AcademicHistory.entity.Subject;
 import SchoolManagement.AcademicHistory.service.SubjectService;
-import jakarta.annotation.PostConstruct;
 
 
+/**
+ * {@link Subject} controller
+ */
 @RestController
 @RequestMapping("/subject")
 public class SubjectController {
@@ -27,9 +28,10 @@ public class SubjectController {
     private SubjectService subjectService;
 
 
-    List<Subject> subjects;
-
-
+    /**
+     * Get all subjects
+     * @return List of subjects
+     */
     @GetMapping("/all")
     @ResponseBody
     public List<Subject> getAllSubjects() {
@@ -37,55 +39,57 @@ public class SubjectController {
     }
 
 
+    /**
+     * Get subject by id
+     * @param subjectId
+     * @return Subject
+     */
     @GetMapping("/{subjectId}")
     public Subject getById(@PathVariable("subjectId") Long subjectId) {
         return subjectService.getById(subjectId);
     }
 
 
+    /**
+     * Get subject by name
+     * @param name
+     * @return List of subjects
+     */ 
     @GetMapping("/name/{name}")
     public List<Subject> getByName(@PathVariable("name") String name) {
         return subjectService.getByName(name);
     }
 
 
+    /**
+     * Get subject by credits
+     * @param credits
+     * @return List of subjects
+     */
     @GetMapping("/credits/{credits}")
     public List<Subject> getByCredits(@PathVariable("credits") int credits) {
         return subjectService.getByCredits(credits);
     }
 
 
+    /**
+     * Get subject by teacher
+     * @param teacher
+     * @return List of subjects
+     */
     @PostMapping("/save")
     public Subject save(@Validated Subject subject) {
         return subjectService.save(subject);
     }
     
     
+    /**
+     * Delete subject by id
+     * @param subjectId
+     */
     @DeleteMapping("/delete/{id}")
     public void deleteById(@PathVariable("id") Long subjectId) {
         subjectService.deleteById(subjectId);
-    }
-
-
-    @GetMapping("/data")
-    public String subjectMenu() {
-        return "You're now in the SubjectController";
-    }
-
-
-    @PostConstruct
-    public void loadData() {
-        System.out.println("\033[31mSubjectController initialized\033[0m");
-        subjects = subjectService.getAll();
-    }
-
-
-    @GetMapping("/list")
-    @ResponseBody
-    public String listSubjects(Model model) {
-        model.addAttribute("subjects", subjects);
-        for(Subject subject : subjects) System.out.println(subject.getName());
-        return "subjects/list-subjects";
     }
 
 

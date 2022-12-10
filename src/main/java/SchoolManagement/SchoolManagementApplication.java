@@ -6,6 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
  * This is the main class of the application.
+ * @author Yrrrrrf
  */
 @SpringBootApplication
 public class SchoolManagementApplication {

@@ -16,6 +16,9 @@ import SchoolManagement.AcademicHistory.entity.SubjectGrade;
 import SchoolManagement.AcademicHistory.service.SubjectGradeService;
 
 
+/**
+ * {@link SubjectGrade} controller
+ */
 @RestController
 @RequestMapping("/subject_grade")
 public class SubjectGradeController {
@@ -24,6 +27,10 @@ public class SubjectGradeController {
     private SubjectGradeService subjectGradeService;
 
 
+    /**
+     * Return all grades from any subject
+     * @return
+     */
     @GetMapping("/all")
     @ResponseBody
     public List<SubjectGrade> getAllSubjectsGrade() {
@@ -31,12 +38,22 @@ public class SubjectGradeController {
     }
 
 
+    /**
+     * Return subject and grade by id
+     * @param subjectId
+     * @return
+     */
     @GetMapping("subject/{id}")
     public List<SubjectGrade> getBySubjectId(@PathVariable("id") Long subjectId) {
         return subjectGradeService.getBySubjectId(subjectId);
     }
 
 
+    /**
+     * Return subject and grade by student id
+     * @param studentId
+     * @return
+     */
     @GetMapping("/student/{studentId}")
     public List<SubjectGrade> getByStudentId(@PathVariable("studentId") Long studentId) {
         List<SubjectGrade> list = subjectGradeService.getByStudentId(studentId);
@@ -46,16 +63,15 @@ public class SubjectGradeController {
     }
 
 
+    /**
+     * Save subject and grade
+     * @param subject
+     * @return
+     */
     @PostMapping("/save")
     public SubjectGrade save(@Validated SubjectGrade subject) {
         return subjectGradeService.save(subject);
     }
     
-
-    @GetMapping("/data")
-    public String subjectMenu() {
-        return "You're now in the Subjects Grade Menu";
-    }
-
 
 }
